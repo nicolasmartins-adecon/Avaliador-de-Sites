@@ -232,9 +232,7 @@ h1,h2,h3{text-wrap:balance;margin:0}
 .flower .petal:hover,.flower .petal.hl{filter:brightness(1.25) drop-shadow(0 0 12px currentColor)}
 .flower text{font-family:var(--f-mono);font-size:11px;fill:var(--ink-2)}
 .flower .val{font-family:var(--f-display);font-size:14px;font-weight:700}
-@media (prefers-reduced-motion:no-preference){
-  .flower .petal{animation:grow .9s cubic-bezier(.2,1.4,.4,1) both}
-}
+html:not(.still) .flower .petal{animation:grow .9s cubic-bezier(.2,1.4,.4,1) both}
 @keyframes grow{from{transform:scale(.25)}}
 .cats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
 .cat{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:10px;align-items:center;padding:12px 14px;border-radius:14px;background:var(--panel-2);border:1px solid transparent;cursor:pointer;text-align:left;transition:border-color .2s, transform .2s}
@@ -409,9 +407,7 @@ footer b{font-family:var(--f-display);color:var(--ink)}
   .go{width:100%;justify-content:center}
   .top .chip{display:none}
 }
-@media (prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation:none!important;transition:none!important}
-}
+html.still *,html.still *::before,html.still *::after{animation:none!important;transition:none!important}
 @media print{
   #garden,.grain,.top,.marquee,.hero,.actions,.filters,.drawer,footer,.vine{display:none!important}
   body{background:#fff;color:#000}
@@ -437,6 +433,9 @@ footer b{font-family:var(--f-display);color:var(--ink)}
       </button>
       <button class="icon-btn" id="setBtn" type="button" title="Conexões (Supabase e PageSpeed)" aria-label="Conexões">
         <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>
+      </button>
+      <button class="icon-btn" id="motionBtn" type="button" title="Pausar animações" aria-label="Pausar animações" aria-pressed="false">
+        <svg viewBox="0 0 24 24" id="motionIco"><path d="M9 6v12M15 6v12"/></svg>
       </button>
       <button class="icon-btn" id="themeBtn" type="button" title="Alternar tema claro/escuro" aria-label="Alternar tema">
         <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
@@ -524,7 +523,7 @@ const cssVar = (n) => getComputedStyle(document.documentElement).getPropertyValu
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const fmtMs = (ms) => (ms == null ? "—" : ms >= 1000 ? (ms / 1000).toFixed(1).replace(".", ",") + " s" : Math.round(ms) + " ms");
 const fmtKB = (b) => (b == null ? "—" : b > 1048576 ? (b / 1048576).toFixed(1).replace(".", ",") + " MB" : Math.round(b / 1024) + " KB");
-const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+let reduceMotion = false; // atualizado pelo botão de animações (padrão: ligadas)
 const store = {
   get(k, d) { try { const v = localStorage.getItem("floresca:" + k); return v == null ? d : JSON.parse(v); } catch { return d; } },
   set(k, v) { try { localStorage.setItem("floresca:" + k, JSON.stringify(v)); } catch {} },
@@ -546,9 +545,9 @@ const edgeOn = () => !!(CFG.EDGE_URL && /^https:\/\//.test(CFG.EDGE_URL));
    1. camada de dados: Edge Function → proxies públicos → nada
    ========================================================================== */
 const PROXIES = [
-  (u) => "https://api.allorigins.win/raw?url=" + encodeURIComponent(u),
-  (u) => "https://corsproxy.io/?url=" + encodeURIComponent(u),
-  (u) => "https://api.codetabs.com/v1/proxy/?quest=" + encodeURIComponent(u),
+  { url: (u) => "https://api.allorigins.win/raw?url=" + encodeURIComponent(u) },
+  { url: (u) => "https://api.allorigins.win/get?url=" + encodeURIComponent(u), json: "contents" },
+  { url: (u) => "https://api.codetabs.com/v1/proxy/?quest=" + encodeURIComponent(u) },
 ];
 
 async function edge(action, payload = {}, ms = 95000) {
@@ -561,18 +560,19 @@ async function edge(action, payload = {}, ms = 95000) {
   return data;
 }
 
-async function viaProxy(url, ms = 14000) {
-  let lastErr;
-  for (const p of PROXIES) {
-    try {
-      const t0 = performance.now();
-      const res = await withTimeout(fetch(p(url)), ms);
-      if (!res.ok) throw new Error("HTTP " + res.status);
-      const text = await res.text();
-      return { text, ms: Math.round(performance.now() - t0), status: res.status };
-    } catch (e) { lastErr = e; }
-  }
-  throw lastErr || new Error("proxies indisponíveis");
+async function viaProxy(url, ms = 20000) {
+  // tenta todos os proxies ao mesmo tempo e fica com o primeiro que responder
+  const t0 = performance.now();
+  const tries = PROXIES.map(async (p) => {
+    const res = await fetch(p.url(url));
+    if (!res.ok) throw new Error("HTTP " + res.status);
+    let text = await res.text();
+    if (p.json) { const j = JSON.parse(text); text = j[p.json] || ""; }
+    if (!text || text.length < 20) throw new Error("resposta vazia");
+    return { text, ms: Math.round(performance.now() - t0), status: 200 };
+  });
+  try { return await withTimeout(Promise.any(tries), ms, "os proxies públicos não responderam a tempo"); }
+  catch (e) { throw new Error(e instanceof AggregateError ? "os proxies públicos recusaram o pedido" : e.message); }
 }
 
 async function getPage(url) {
@@ -602,8 +602,14 @@ async function getPSI(url, strategy) {
   ["performance", "accessibility", "best-practices", "seo"].forEach((c) => qs.append("category", c));
   if (CFG.PSI_API_KEY) qs.set("key", CFG.PSI_API_KEY);
   const res = await withTimeout(fetch("https://www.googleapis.com/pagespeedonline/v5/runPagespeed?" + qs), 100000, "PageSpeed demorou demais");
-  const data = await res.json();
-  if (!res.ok) throw new Error(data?.error?.message || "PageSpeed falhou");
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok) {
+    const msg = data?.error?.message || "";
+    if (res.status === 429 || /quota/i.test(msg)) throw new Error(CFG.PSI_API_KEY ? "limite diário da sua chave PageSpeed atingido" : "a cota gratuita do Google sem chave está esgotada. Crie uma chave da API PageSpeed (é grátis) e cole na engrenagem ⚙");
+    if (/API key not valid|API_KEY_INVALID/i.test(msg)) throw new Error("a chave da API PageSpeed é inválida");
+    if (/referer|referrer/i.test(msg)) throw new Error("a chave PageSpeed está restrita a outro domínio. Libere " + location.host + " nas restrições da chave");
+    throw new Error(msg || "PageSpeed respondeu " + res.status);
+  }
   return data;
 }
 
@@ -1513,10 +1519,10 @@ async function run(url) {
     if (wantDesk) setStep("psiD", "run"); else setStep("psiD", "skip", "desligado");
     const pPage = getPage(url).then(
       (r) => { setStep("page", "ok", fmtKB(r.bytes)); return r; },
-      (e) => { setStep("page", "fail", "falhou"); notes.push("Não foi possível ler o HTML (" + e.message + "). Relatório baseado só no PageSpeed."); return null; });
+      (e) => { setStep("page", "fail", "falhou"); notes.push("Leitura da página: " + e.message + "." + (edgeOn() ? "" : " Conecte a Edge Function do Supabase para ler qualquer site com estabilidade.")); return null; });
     const pM = !wantPsi ? Promise.resolve(null) : getPSI(url, "mobile").then(
       (r) => { setStep("psiM", "ok", "feito"); return r; },
-      (e) => { setStep("psiM", "fail", "falhou"); notes.push("PageSpeed (celular): " + e.message + (CFG.PSI_API_KEY || edgeOn() ? "" : ". Uma chave de API evita os limites de uso.")); return null; });
+      (e) => { setStep("psiM", "fail", "falhou"); notes.push("Performance: " + e.message + "."); return null; });
     const pD = !wantDesk ? Promise.resolve(null) : getPSI(url, "desktop").then(
       (r) => { setStep("psiD", "ok", "feito"); return r; },
       () => { setStep("psiD", "fail", "falhou"); return null; });
@@ -1538,7 +1544,7 @@ async function run(url) {
     } else setStep("sug", "skip", wantSug ? "sem termos" : "desligado");
 
     const [psiM, psiD] = await Promise.all([pM, pD]);
-    if (!page && !psiM) throw new Error("Não consegui ler o site nem medir performance. Confira a URL, ou configure a Edge Function do Supabase (engrenagem ⚙).");
+    if (!page && !psiM) { const er = new Error("Não consegui ler o site nem medir a performance."); er.details = notes.slice(); throw er; }
     setStep("score", "run");
     const R = analyze(page || { requestedUrl: url, finalUrl: url }, psiM, psiD, { suggest, notes });
     setStep("score", "ok");
@@ -1549,7 +1555,8 @@ async function run(url) {
     $("#resumo").scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth" });
   } catch (e) {
     $("#loading").hidden = true; grow.stop();
-    err.textContent = e.message; err.hidden = false;
+    err.innerHTML = `<b>${esc(e.message)}</b>${e.details?.length ? `<ul style="margin:8px 0 0;padding-left:18px">${e.details.map((d) => `<li>${esc(d)}</li>`).join("")}</ul>` : ""}${edgeOn() ? "" : `<p style="margin:8px 0 0">Para funcionar com qualquer site, conecte o Supabase e uma chave PageSpeed. <button type="button" class="linkish" data-open-settings>Abrir conexões</button></p>`}`;
+    err.hidden = false;
   } finally { btn.disabled = false; }
 }
 
@@ -1674,11 +1681,15 @@ const garden = (() => {
     const grow = () => { b.n += 6; if (b.n < 140) requestAnimationFrame(grow); else setTimeout(() => (blooms = blooms.filter((x) => x !== b)), 2500); };
     grow();
   }
+  function setStill(v) {
+    cancelAnimationFrame(raf);
+    if (v) { t = 1; frame(); cancelAnimationFrame(raf); } else frame();
+  }
   addEventListener("resize", resize);
   addEventListener("pointermove", (e) => { mouse.x = e.clientX; mouse.y = e.clientY; });
   resize();
-  if (reduceMotion) { t = 1; frame(); cancelAnimationFrame(raf); } else frame();
-  return { refresh: resize, burst };
+  frame();
+  return { refresh: resize, burst, setStill };
 })();
 
 const grow = (() => {
@@ -1753,6 +1764,15 @@ $("#probe").addEventListener("submit", (e) => {
   if (location.protocol !== "file:") { try { history.replaceState(null, "", "#" + encodeURIComponent(url)); } catch {} }
   run(url);
 });
+function applyMotion(still) {
+  reduceMotion = still;
+  document.documentElement.classList.toggle("still", still);
+  garden.setStill(still);
+  const b = $("#motionBtn"); b.setAttribute("aria-pressed", String(still));
+  b.title = still ? "Ligar animações" : "Pausar animações"; b.setAttribute("aria-label", b.title);
+  $("#motionIco").innerHTML = still ? '<path d="M8 5l11 7-11 7z"/>' : '<path d="M9 6v12M15 6v12"/>';
+}
+$("#motionBtn").addEventListener("click", () => { const v = !reduceMotion; store.set("still", v); applyMotion(v); });
 $("#demoBtn").addEventListener("click", () => runDemo(true));
 $("#themeBtn").addEventListener("click", () => {
   const cur = document.documentElement.dataset.theme || (matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
@@ -1761,6 +1781,7 @@ $("#themeBtn").addEventListener("click", () => {
   garden.refresh(); if (REPORT) render(REPORT);
 });
 $("#setBtn").addEventListener("click", () => openDrawer("Conexões", settingsHTML()));
+$("#formErr").addEventListener("click", (e) => { if (e.target.closest("[data-open-settings]")) openDrawer("Conexões", settingsHTML()); });
 $("#histBtn").addEventListener("click", async () => { openDrawer("Histórico", "<p>Carregando…</p>"); $("#drawerBody").innerHTML = await historyHTML(); });
 $("#drawer").addEventListener("click", async (e) => {
   if (e.target === $("#drawer") || e.target.closest("[data-close]")) return closeDrawer();
@@ -1779,6 +1800,7 @@ $("#drawer").addEventListener("click", async (e) => {
 addEventListener("keydown", (e) => { if (e.key === "Escape" && !$("#drawer").hidden) closeDrawer(); });
 
 (() => {
+  applyMotion(store.get("still", false));
   const th = store.get("theme", null); if (th) { document.documentElement.dataset.theme = th; garden.refresh(); }
   const fromHash = decodeURIComponent(location.hash.slice(1) || "");
   const u = normalizeUrl(fromHash);
