@@ -1,0 +1,3 @@
+# A página no GitHub Pages chama a função sem login; por isso o JWT fica desligado.
+[functions.floresca]
+verify_jwt = false
