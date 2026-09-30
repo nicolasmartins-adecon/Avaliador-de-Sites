@@ -3,10 +3,22 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Floresca SEO</title>
-<meta name="description" content="Floresca: cole a URL de um site e descubra o que melhorar em SEO, performance, palavras-chave e conversão de leads, com prioridades claras.">
-<meta property="og:title" content="Floresca SEO">
-<meta property="og:description" content="Diagnóstico de SEO, alcance e palavras-chave com plano de ação priorizado.">
+<title>Avaliador de Sites | SEO, alcance e palavras-chave</title>
+<meta name="description" content="Avaliador de sites gratuito: cole a URL e veja o que melhorar em SEO, velocidade, palavras-chave e conversão de leads, com plano de ação em ordem de prioridade.">
+<link rel="canonical" href="https://nicolasmartins-adecon.github.io/Avaliador-de-Sites/">
+<meta property="og:url" content="https://nicolasmartins-adecon.github.io/Avaliador-de-Sites/">
+<meta property="og:image" content="https://nicolasmartins-adecon.github.io/Avaliador-de-Sites/og-image.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Avaliador de Sites">
+<meta property="og:title" content="Avaliador de Sites">
+<meta property="og:description" content="Diagnóstico de SEO, alcance e palavras-chave com plano de ação priorizado para atrair mais visitantes e leads.">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Avaliador de Sites","alternateName":"Floresca SEO","applicationCategory":"BusinessApplication","operatingSystem":"Web","inLanguage":"pt-BR","description":"Analisa SEO, velocidade (Core Web Vitals), palavras-chave e conversão de leads de qualquer site e entrega um plano de ação priorizado.","offers":{"@type":"Offer","price":"0","priceCurrency":"BRL"}}
+</script>
 <meta name="theme-color" content="#120a1c">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23120a1c'/%3E%3Cg fill='%23ff5c8a'%3E%3Ccircle cx='32' cy='16' r='7'/%3E%3Ccircle cx='48' cy='32' r='7'/%3E%3Ccircle cx='32' cy='48' r='7'/%3E%3Ccircle cx='16' cy='32' r='7'/%3E%3C/g%3E%3Ccircle cx='32' cy='32' r='7' fill='%23ffb627'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,7 +55,7 @@ window.FLORESCA_CONFIG = {
   --coral:#ff5c8a; --marigold:#ffb627; --teal:#19e3c4; --lilac:#b69cff; --sky:#5cc8ff; --leaf:#7be36b;
   --good:#2fe39b; --warn:#ffb627; --bad:#ff5a6e; --crit:#ff2e63;
   --good-bg:rgba(47,227,155,.12); --warn-bg:rgba(255,182,39,.12); --bad-bg:rgba(255,90,110,.13); --crit-bg:rgba(255,46,99,.18);
-  --glass:rgba(29,18,48,.72); --shadow:0 30px 80px -30px rgba(0,0,0,.7);
+  --on-accent:#1a0b1f; --glass:rgba(29,18,48,.72); --shadow:0 30px 80px -30px rgba(0,0,0,.7);
   --serp-bg:#202124; --serp-title:#8ab4f8; --serp-url:#bdc1c6; --serp-text:#bdc1c6;
   --f-display:"Unbounded", "Arial Black", system-ui, sans-serif;
   --f-body:"Instrument Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
@@ -54,29 +66,29 @@ window.FLORESCA_CONFIG = {
 @media (prefers-color-scheme: light){
   :root:not([data-theme="dark"]){
     --bg:#f5f0ff; --bg-2:#ece3ff; --panel:#ffffff; --panel-2:#f4eeff; --line:#dcd0f3;
-    --ink:#1b0f2e; --ink-2:#4a3b68; --ink-3:#77689a;
-    --coral:#e02f69; --marigold:#b87400; --teal:#00957f; --lilac:#6a4be0; --sky:#0a7fc0; --leaf:#2f9a1f;
-    --good:#0b925b; --warn:#b87400; --bad:#d6304d; --crit:#c8103f;
+    --ink:#1b0f2e; --ink-2:#4a3b68; --ink-3:#5f527c;
+    --coral:#be1f55; --marigold:#8a5600; --teal:#00705e; --lilac:#5536c9; --sky:#05628f; --leaf:#26711a;
+    --good:#08734a; --warn:#8a5600; --bad:#b01f3b; --crit:#a30d33;
     --good-bg:rgba(11,146,91,.10); --warn-bg:rgba(184,116,0,.11); --bad-bg:rgba(214,48,77,.10); --crit-bg:rgba(200,16,63,.13);
-    --glass:rgba(255,255,255,.78); --shadow:0 30px 70px -35px rgba(60,20,120,.35);
+    --on-accent:#ffffff; --glass:rgba(255,255,255,.78); --shadow:0 30px 70px -35px rgba(60,20,120,.35);
     --serp-bg:#ffffff; --serp-title:#1a0dab; --serp-url:#202124; --serp-text:#4d5156;
     color-scheme:light;
   }
 }
 :root[data-theme="light"]{
   --bg:#f5f0ff; --bg-2:#ece3ff; --panel:#ffffff; --panel-2:#f4eeff; --line:#dcd0f3;
-  --ink:#1b0f2e; --ink-2:#4a3b68; --ink-3:#77689a;
-  --coral:#e02f69; --marigold:#b87400; --teal:#00957f; --lilac:#6a4be0; --sky:#0a7fc0; --leaf:#2f9a1f;
-  --good:#0b925b; --warn:#b87400; --bad:#d6304d; --crit:#c8103f;
+  --ink:#1b0f2e; --ink-2:#4a3b68; --ink-3:#5f527c;
+  --coral:#be1f55; --marigold:#8a5600; --teal:#00705e; --lilac:#5536c9; --sky:#05628f; --leaf:#26711a;
+  --good:#08734a; --warn:#8a5600; --bad:#b01f3b; --crit:#a30d33;
   --good-bg:rgba(11,146,91,.10); --warn-bg:rgba(184,116,0,.11); --bad-bg:rgba(214,48,77,.10); --crit-bg:rgba(200,16,63,.13);
-  --glass:rgba(255,255,255,.78); --shadow:0 30px 70px -35px rgba(60,20,120,.35);
+  --on-accent:#ffffff; --glass:rgba(255,255,255,.78); --shadow:0 30px 70px -35px rgba(60,20,120,.35);
   --serp-bg:#ffffff; --serp-title:#1a0dab; --serp-url:#202124; --serp-text:#4d5156;
   color-scheme:light;
 }
 
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;overflow-x:clip}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.55;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.55;overflow-x:clip;-webkit-font-smoothing:antialiased}
 img{max-width:100%}
 [hidden]{display:none!important}
 a{color:var(--sky)}
@@ -96,7 +108,7 @@ h1,h2,h3{text-wrap:balance;margin:0}
 .wrap{position:relative;z-index:2;padding-inline:var(--gutter);max-width:1320px;margin-inline:auto}
 
 /* ---------- topo ---------- */
-.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:14px;
+.top{position:relative;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:14px;
   backdrop-filter:blur(14px) saturate(1.3);-webkit-backdrop-filter:blur(14px) saturate(1.3);background:linear-gradient(var(--bg),transparent)}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
 .brand svg{width:34px;height:34px;animation:spin 24s linear infinite}
@@ -178,7 +190,7 @@ h1,h2,h3{text-wrap:balance;margin:0}
 .report{position:relative;z-index:2;padding-bottom:80px}
 .demo-flag{display:flex;gap:12px;align-items:center;flex-wrap:wrap;border:1px dashed var(--marigold);background:linear-gradient(var(--warn-bg),var(--warn-bg)),var(--panel);border-radius:16px;padding:12px 16px;font-size:14px;margin-block:10px 24px}
 .demo-flag > b{font-family:var(--f-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--marigold)}
-.section{margin-top:clamp(50px,7vw,90px)}
+.section{margin-top:clamp(50px,7vw,90px);scroll-margin-top:calc(env(safe-area-inset-top,0px) + 84px)}
 .sec-head{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin-bottom:22px}
 .sec-head .k{font-family:var(--f-mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--coral);display:block;margin-bottom:8px}
 .sec-head h2{font-family:var(--f-display);font-weight:700;font-size:clamp(24px,3.4vw,42px);letter-spacing:-.02em;line-height:1.05}
@@ -195,7 +207,7 @@ h1,h2,h3{text-wrap:balance;margin:0}
 .site-id{display:flex;gap:14px;align-items:center;min-width:0}
 .site-id img{width:40px;height:40px;border-radius:12px;background:var(--panel-2);flex:none;object-fit:contain;padding:4px}
 .site-id .t{min-width:0}
-.site-id h3{font-family:var(--f-display);font-size:clamp(18px,2.2vw,26px);word-break:break-word}
+.site-id h2{font-family:var(--f-display);font-size:clamp(18px,2.2vw,26px);word-break:break-word}
 .site-id a{font-family:var(--f-mono);font-size:12px;color:var(--ink-3);word-break:break-all;text-decoration:none}
 .stage{margin-top:22px;display:flex;gap:18px;align-items:center;flex-wrap:wrap}
 .stage-badge{display:flex;align-items:center;gap:12px;padding:10px 16px 10px 10px;border-radius:999px;background:var(--panel-2);border:1px solid var(--line)}
@@ -207,7 +219,8 @@ h1,h2,h3{text-wrap:balance;margin:0}
 .stage-track i.on{background:linear-gradient(90deg,var(--teal),var(--marigold))}
 .verdict{font-size:clamp(17px,1.8vw,21px);margin:20px 0 0;max-width:60ch}
 .gauges{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:24px}
-.gauge{text-align:center;display:grid;justify-items:center;gap:4px}
+.gauge{text-align:center;display:grid;justify-items:center;align-content:start;gap:4px}
+.gauge .lbl{min-height:2.7em;display:flex;align-items:flex-start;justify-content:center}
 .gauge svg{width:100%;max-width:150px;aspect-ratio:1}
 .gauge .lbl{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
 .gauge .sub{font-size:12px;color:var(--ink-3);max-width:20ch}
@@ -232,6 +245,7 @@ h1,h2,h3{text-wrap:balance;margin:0}
 .flower .petal:hover,.flower .petal.hl{filter:brightness(1.25) drop-shadow(0 0 12px currentColor)}
 .flower text{font-family:var(--f-mono);font-size:11px;fill:var(--ink-2)}
 .flower .val{font-family:var(--f-display);font-size:14px;font-weight:700}
+.cat.nodata{opacity:.7}
 html:not(.still) .flower .petal{animation:grow .9s cubic-bezier(.2,1.4,.4,1) both}
 @keyframes grow{from{transform:scale(.25)}}
 .cats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
@@ -266,16 +280,16 @@ html:not(.still) .flower .petal{animation:grow .9s cubic-bezier(.2,1.4,.4,1) bot
 .filters{display:flex;gap:8px;flex-wrap:wrap}
 .filters button{border:1px solid var(--line);background:var(--panel);border-radius:999px;padding:7px 14px;cursor:pointer;font-size:13px;color:var(--ink-2);transition:all .2s}
 .filters button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-.filters button b{font-family:var(--f-mono);font-weight:400;opacity:.7;margin-left:4px}
+.filters button b{font-family:var(--f-mono);font-weight:400;opacity:.85;margin-left:4px}
 .plan{display:grid;gap:12px;margin-top:18px}
-.item{display:grid;grid-template-columns:6px minmax(0,1fr);border-radius:18px;overflow:hidden;background:var(--panel);border:1px solid var(--line)}
+.item{display:grid;grid-template-columns:6px auto minmax(0,1fr);transition:opacity .3s, background .3s;border-radius:18px;overflow:hidden;background:var(--panel);border:1px solid var(--line)}
 .item > i{background:var(--pc)}
 .item .body{padding:16px 18px;display:grid;gap:8px;min-width:0}
 .item .row1{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
 .pill{font-family:var(--f-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;padding:4px 9px;border-radius:999px;border:1px solid var(--line);color:var(--ink-2);white-space:nowrap}
 .pill.p{background:var(--pbg);color:var(--pc);border-color:transparent;font-weight:600}
 .pill.qw{background:linear-gradient(90deg,var(--teal),var(--leaf));color:#062019;border:0;font-weight:600}
-.item h4{margin:0;font-size:17px;font-weight:600}
+.item h3{margin:0;font-size:17px;font-weight:600;font-family:var(--f-body)}
 .item .val{font-family:var(--f-mono);font-size:12px;color:var(--ink-2);word-break:break-word}
 .item details{font-size:14px;color:var(--ink-2)}
 .item summary{cursor:pointer;color:var(--ink);font-weight:500;list-style:none;display:inline-flex;gap:6px;align-items:center}
@@ -293,10 +307,10 @@ html:not(.still) .flower .petal{animation:grow .9s cubic-bezier(.2,1.4,.4,1) bot
 .good-list > div{display:flex;gap:10px;align-items:flex-start;padding:12px 14px;border-radius:14px;background:linear-gradient(var(--good-bg),var(--good-bg)),var(--panel);font-size:14px}
 .good-list svg{width:18px;height:18px;flex:none;margin-top:2px;stroke:var(--good);fill:none;stroke-width:2.5}
 .good-list small{display:block;color:var(--ink-3);font-family:var(--f-mono);font-size:11px;margin-top:2px;word-break:break-word}
-.quick{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr));gap:12px}
+.quick{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:12px}
 .quick .panel{position:relative;overflow:hidden}
 .quick .panel::after{content:"";position:absolute;right:-30px;top:-30px;width:90px;height:90px;border-radius:50%;background:radial-gradient(var(--teal),transparent 70%);opacity:.25}
-.quick h4{margin:10px 0 6px;font-size:16px}
+.quick .panel h3{margin:10px 0 6px;font-size:16px;font-weight:600;font-family:var(--f-body);letter-spacing:0}
 .quick p{margin:0;font-size:14px;color:var(--ink-2)}
 
 /* palavras-chave */
@@ -316,7 +330,7 @@ td.c{text-align:center}
 .dotm{display:inline-block;width:12px;height:12px;border-radius:50%;border:1.5px solid var(--line)}
 .dotm.y{background:var(--good);border-color:var(--good)}
 .suggest{display:grid;gap:14px}
-.sg h5{margin:0 0 8px;font-family:var(--f-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);font-weight:400}
+.sg .sg-h{margin:0 0 8px;font-family:var(--f-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);font-weight:400}
 .sg-list{display:flex;flex-wrap:wrap;gap:8px}
 .sg-list button{border:1px solid var(--line);background:var(--panel-2);border-radius:12px;padding:7px 11px;font-size:13.5px;cursor:pointer;display:inline-flex;gap:8px;align-items:center;text-align:left}
 .sg-list button:hover{border-color:var(--teal)}
@@ -389,6 +403,93 @@ td.c{text-align:center}
 footer{position:relative;z-index:2;padding-block:40px 60px;border-top:1px solid var(--line);color:var(--ink-3);font-size:13px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 footer b{font-family:var(--f-display);color:var(--ink)}
 
+
+/* ===== interação: navegação do relatório ===== */
+.rnav{position:sticky;top:calc(env(safe-area-inset-top,0px) + 10px);z-index:15;margin:6px 0 0;padding-block:8px}
+.rnav-in{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;padding:5px;border-radius:16px;background:var(--glass);border:1px solid var(--line);backdrop-filter:blur(14px) saturate(1.3);-webkit-backdrop-filter:blur(14px) saturate(1.3);box-shadow:var(--shadow)}
+.rnav-in::-webkit-scrollbar{display:none}
+.rnav button{flex:none;border:0;background:none;color:var(--ink-2);padding:8px 14px;border-radius:11px;cursor:pointer;font-size:14px;font-weight:500;white-space:nowrap;transition:background .2s,color .2s}
+.rnav button:hover{background:var(--panel-2);color:var(--ink)}
+.rnav button.on{background:var(--ink);color:var(--bg)}
+.rnav button b{font-family:var(--f-mono);font-size:11px;font-weight:600;padding:1px 7px;border-radius:99px;background:var(--coral);color:var(--on-accent);margin-left:4px}
+/* ===== alternador hoje / depois ===== */
+.seg{display:inline-flex;padding:4px;border-radius:14px;background:var(--panel-2);border:1px solid var(--line);gap:4px}
+.seg button{border:0;background:none;color:var(--ink-2);padding:8px 14px;border-radius:10px;cursor:pointer;font-size:13.5px;font-weight:500}
+.seg button[aria-pressed="true"]{background:linear-gradient(120deg,var(--marigold),var(--coral));color:#1a0b1f;font-weight:600}
+.flower .panel,.flower{position:relative}
+.flower-note{position:absolute;left:0;right:0;bottom:14px;text-align:center;margin:0;font-size:13px;color:var(--ink-2)}
+.cat b sup{font-family:var(--f-mono);font-size:11px;color:var(--good);margin-left:3px;vertical-align:super}
+/* ===== simulador ===== */
+.sim{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:22px;align-items:center;margin-bottom:18px;background:linear-gradient(135deg,color-mix(in srgb,var(--teal) 10%,var(--panel)),var(--panel) 60%)}
+.sim .k{font-family:var(--f-mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--teal)}
+.sim h3{font-family:var(--f-display);font-size:clamp(18px,2.2vw,24px);margin:6px 0 16px}
+.sim-track{position:relative;height:12px;border-radius:12px;background:var(--line);margin:0 18px 0 0}
+.sim-track em{position:absolute;inset:0 auto 0 0;border-radius:12px;background:linear-gradient(90deg,var(--teal),var(--leaf),var(--marigold));transition:width .6s cubic-bezier(.2,.8,.2,1)}
+.sim-track span{position:absolute;top:50%;translate:-50% -50%;transition:left .6s cubic-bezier(.2,.8,.2,1)}
+.sim-track span svg{width:34px;height:34px;display:block;filter:drop-shadow(0 4px 10px rgba(0,0,0,.35))}
+.sim .hint{margin-top:16px}
+.sim-r{display:grid;gap:8px}
+.sim-chip{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:10px;align-items:center;padding:10px 14px;border-radius:14px;background:var(--panel-2)}
+.sim-chip span{font-size:14px;color:var(--ink-2)}
+.sim-chip b{display:inline-flex;align-items:center;gap:6px;font-family:var(--f-display);font-size:20px}
+.sim-chip b em{font-style:normal;color:var(--ink-3);font-size:15px}
+.sim-chip b svg{width:16px;height:8px;fill:none;stroke:var(--ink-3);stroke-width:1.6}
+.sim-chip i{font-style:normal;font-family:var(--f-mono);font-size:12px;font-weight:600;color:var(--good);background:var(--good-bg);padding:3px 8px;border-radius:99px}
+.sim-r .linkish{justify-self:end}
+/* ===== checklist ===== */
+.tick{align-self:start;margin:16px 0 0 14px;width:30px;height:30px;border-radius:50%;border:2px solid var(--line);background:var(--panel-2);display:grid;place-items:center;cursor:pointer;transition:transform .2s cubic-bezier(.2,1.6,.4,1),background .2s,border-color .2s}
+.tick:hover{border-color:var(--teal);transform:scale(1.1)}
+.tick svg{width:16px;height:16px;fill:none;stroke:transparent;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:24;stroke-dashoffset:24;transition:stroke-dashoffset .35s ease .05s}
+.tick[aria-pressed="true"]{background:var(--teal);border-color:var(--teal);transform:scale(1.05)}
+.tick[aria-pressed="true"] svg{stroke:#062019;stroke-dashoffset:0}
+.ok-pill{display:none;background:var(--good-bg);color:var(--good);border-color:transparent}
+.item.done{opacity:.62}
+.item.done .ok-pill{display:inline-block}
+.item.done h3{text-decoration:line-through;text-decoration-color:var(--teal);text-decoration-thickness:2px}
+.item.done > i{background:var(--teal)}
+.floaty{position:fixed;z-index:70;pointer-events:none;translate:-50% -100%;font-family:var(--f-display);font-weight:700;font-size:16px;color:var(--good);text-shadow:0 2px 12px var(--bg);animation:floaty 1.1s ease-out forwards}
+@keyframes floaty{from{opacity:0;transform:translateY(6px) scale(.8)}20%{opacity:1;transform:translateY(-6px) scale(1.1)}to{opacity:0;transform:translateY(-46px) scale(1)}}
+/* ===== inclinação 3D ===== */
+[data-tilt],[data-tilt-children] > .panel{transition:transform .18s ease-out, box-shadow .2s;will-change:transform}
+[data-tilt]:hover,[data-tilt-children] > .panel:hover{box-shadow:var(--shadow)}
+/* ===== números e anéis ===== */
+html:not(.still) .arc{animation:arc 1.3s cubic-bezier(.2,.8,.2,1) both}
+@keyframes arc{from{stroke-dasharray:0 1000}}
+/* ===== bolhas de palavras-chave ===== */
+.cloud .bub{cursor:pointer;outline:none}
+html:not(.still) .cloud .bub{animation:bob 6s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-5px)}}
+.cloud .bub.on circle,.cloud .bub:focus-visible circle{stroke-width:3.5;fill-opacity:.35}
+.kw-detail{margin-top:14px;padding:14px 16px;border-radius:16px;background:var(--panel-2);display:grid;gap:8px;font-size:14px}
+.kw-detail p{margin:0;line-height:1.9}
+.kd-h{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.kd-h > b{font-family:var(--f-display);font-size:18px;word-break:break-word}
+.kd-h .btn{padding:6px 12px;font-size:13px}
+.kd-n{display:flex;gap:18px;flex-wrap:wrap;color:var(--ink-2)}
+.kd-n b{font-family:var(--f-display);color:var(--ink)}
+.tagok,.tagno{font-family:var(--f-mono);font-size:11px;padding:3px 8px;border-radius:8px;white-space:nowrap}
+.tagok{background:var(--good-bg);color:var(--good)} .tagno{background:var(--warn-bg);color:var(--warn)}
+/* ===== laboratório de título ===== */
+.serp-col{display:grid;gap:14px;align-content:start;min-width:0}
+.serp .sd b{font-weight:700;color:inherit}
+.serp-edit{display:grid;gap:8px}
+.serp-edit h3{margin-bottom:0}
+.serp-edit label{display:flex;justify-content:space-between;gap:10px;font-size:13px;color:var(--ink-2);margin-top:6px}
+.serp-edit label span{font-size:11px;color:var(--ink-3)}
+.serp-edit textarea{width:100%;resize:vertical;background:var(--bg-2);border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-size:14.5px;line-height:1.45}
+.serp-edit textarea:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 4px color-mix(in srgb,var(--teal) 18%,transparent)}
+.serp-edit .actions{margin-top:6px}
+/* ===== formulário: exemplos e dicas ===== */
+.try{display:flex;gap:8px;flex-wrap:wrap;align-items:center;font-size:13px;color:var(--ink-3)}
+.try button{border:1px dashed var(--line);background:none;border-radius:999px;padding:5px 12px;font-family:var(--f-mono);font-size:12px;color:var(--ink-2);cursor:pointer;transition:all .2s}
+.try button:hover{border-style:solid;border-color:var(--coral);color:var(--ink);transform:translateY(-1px)}
+.tip{margin:22px 0 0;padding:14px 16px;border-radius:14px;background:var(--panel);border:1px solid var(--line);font-size:14px;color:var(--ink-2);max-width:62ch}
+.tip b{color:var(--marigold);font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin-right:6px}
+html:not(.still) .tip.in{animation:tipin .5s ease both}
+@keyframes tipin{from{opacity:0;transform:translateY(6px)}}
+@media (max-width:980px){ .sim{grid-template-columns:minmax(0,1fr)} }
+@media (max-width:560px){ .rnav button{padding:7px 11px;font-size:13px} .tick{margin:14px 0 0 10px;width:28px;height:28px} .sim-chip b{font-size:18px} }
+
 /* responsivo */
 @media (max-width:980px){
   .hero,.summary,.flower-grid,.kw-grid,.previews{grid-template-columns:minmax(0,1fr)}
@@ -401,7 +502,6 @@ footer b{font-family:var(--f-display);color:var(--ink)}
   .gauges{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
   .tally{grid-template-columns:repeat(2,minmax(0,1fr))}
   .cats{grid-template-columns:minmax(0,1fr)}
-  .flower text{font-size:19px} .flower .val{font-size:22px}
   .vitals{grid-template-columns:minmax(0,1fr)}
   .lh-row{grid-template-columns:repeat(2,minmax(0,1fr))}
   .go{width:100%;justify-content:center}
@@ -409,7 +509,11 @@ footer b{font-family:var(--f-display);color:var(--ink)}
 }
 html.still *,html.still *::before,html.still *::after{animation:none!important;transition:none!important}
 @media print{
-  #garden,.grain,.top,.marquee,.hero,.actions,.filters,.drawer,footer,.vine{display:none!important}
+  #garden,.grain,.top,.marquee,.hero,.actions,.filters,.drawer,footer,.vine,.more,.shot-col,.rnav,.seg,.serp-edit,.kw-detail .btn,#simReset,.floaty{display:none!important}
+  [data-tilt],[data-tilt-children] > .panel{transform:none!important}
+  .summary{grid-template-columns:1fr}
+  .section{margin-top:28px;break-before:auto}
+  .sec-head{break-after:avoid}
   body{background:#fff;color:#000}
   .panel,.item{break-inside:avoid;border-color:#ccc}
   .item details{display:block} .item details > *{display:block}
@@ -473,6 +577,7 @@ html.still *,html.still *::before,html.still *::after{animation:none!important;t
           <label for="optSug"><input class="toggle" type="checkbox" id="optSug" checked> Buscas reais do Google</label>
           <button type="button" class="linkish" id="demoBtn">ver relatório de exemplo</button>
         </div>
+        <div class="try" id="tryRow"><span>Experimente com:</span><button type="button" data-try="nubank.com.br">nubank.com.br</button><button type="button" data-try="rdstation.com">rdstation.com</button><button type="button" data-try="magazineluiza.com.br">magazineluiza.com.br</button></div>
         <div class="err" id="formErr" hidden></div>
       </div>
     </form>
@@ -487,6 +592,7 @@ html.still *,html.still *::before,html.still *::after{animation:none!important;t
     <div>
       <h3 id="loadTitle">Plantando a análise…</h3>
       <ol class="steps" id="steps"></ol>
+      <p class="tip" id="tip" aria-live="off"></p>
     </div>
   </section>
 
@@ -833,7 +939,12 @@ function normPSI(raw) {
   const le = raw.loadingExperience?.metrics ? raw.loadingExperience : raw.originLoadingExperience?.metrics ? raw.originLoadingExperience : null;
   const m = le?.metrics || {};
   const p = (k) => m[k]?.percentile ?? null;
+  const lcpA = A["largest-contentful-paint"] || {};
+  const err = lh.runtimeError?.code && lh.runtimeError.code !== "NO_ERROR" ? lh.runtimeError.code
+    : lcpA.scoreDisplayMode === "error" ? (/NO_LCP/i.test(lcpA.errorMessage || "") ? "NO_LCP" : "LCP_ERROR")
+    : C.performance && C.performance.score == null ? "PERF_ERROR" : null;
   return {
+    err, errMsg: lh.runtimeError?.message || lcpA.errorMessage || "",
     perf: sc("performance"), a11y: sc("accessibility"), bp: sc("best-practices"), seo: sc("seo"),
     lcp: nv("largest-contentful-paint"), cls: nv("cumulative-layout-shift"), tbt: nv("total-blocking-time"), fcp: nv("first-contentful-paint"), si: nv("speed-index"), ttfb: nv("server-response-time"),
     weight: nv("total-byte-weight"),
@@ -950,7 +1061,14 @@ function analyze(page, psiM, psiD, extras = {}) {
   const fld = P?.field;
   const lcp = fld?.lcp ?? P?.lcp, cls = fld?.cls ?? P?.cls, inp = fld?.inp;
   const srcV = fld ? "dados reais de usuários do Chrome (CrUX)" : "laboratório (Lighthouse, celular simulado)";
-  if (P) {
+  if (P && P.perf == null && P.err) {
+    const nolcp = /NO_LCP|LCP/.test(P.err);
+    add("perf", "perf-err", 8, "fail", "O Google não conseguiu medir o carregamento", nolcp ? "LCP não detectado (NO_LCP)" : P.err, nolcp
+      ? "O Lighthouse não encontrou o conteúdo principal da página durante o carregamento. Quase sempre é porque o topo do site começa invisível (animações de entrada com opacidade zero, comuns no Elementor) ou atrás de uma tela de carregamento. Para o Google, é como se a página demorasse a mostrar qualquer coisa, e o visitante vê uma tela vazia nos primeiros segundos."
+      : "O teste de performance do Google terminou com erro, então não há nota de velocidade para esta página.",
+      nolcp ? "Remova as animações de entrada dos elementos do topo (no Elementor: selecione a seção → Avançado → Efeitos de movimento → Animação de entrada: Nenhuma) e desative preloaders/telas de carregamento. Depois rode a análise de novo." : "Rode a análise de novo em alguns minutos. Se persistir, teste em pagespeed.web.dev para ver o detalhe.", "baixo", "Lighthouse");
+  }
+  if (P && P.perf != null) {
     add("perf", "perf", 9, P.perf >= 90 ? "pass" : P.perf >= 50 ? "warn" : "fail", "Nota de performance no celular", `${P.perf}/100`, "A maioria das buscas é feita no celular, e o Google indexa a versão mobile. Página lenta perde posição e visitante.", "Comece pelos itens de LCP e bloqueio de JavaScript abaixo; eles costumam render mais pontos.", "médio", "Lighthouse");
     if (lcp != null) add("perf", "lcp", 9, lcp <= 2500 ? "pass" : lcp <= 4000 ? "warn" : "fail", "LCP: tempo até o conteúdo principal aparecer", `${fmtMs(lcp)} · ${srcV}`, "Core Web Vital oficial do Google. Acima de 2,5 s o visitante já percebe lentidão; muitos saem antes de ver a oferta.", "Comprima e converta a imagem principal para WebP/AVIF, use <code>fetchpriority=\"high\"</code> nela, e reduza CSS/JS que bloqueiam a renderização.", "médio", WD);
     if (cls != null) add("perf", "cls", 7, cls <= 0.1 ? "pass" : cls <= 0.25 ? "warn" : "fail", "CLS: estabilidade do layout", `${cls.toFixed(2).replace(".", ",")} · ${srcV}`, "Mede o quanto a página “pula” enquanto carrega. Pulos fazem o visitante clicar no lugar errado e passam sensação de site amador.", "Defina largura e altura em imagens, vídeos e banners, e reserve espaço para anúncios e pop-ups.", "baixo", WD);
@@ -1039,32 +1157,36 @@ function analyze(page, psiM, psiD, extras = {}) {
     add("conv", "track", 6, f.trackers.length ? "pass" : "fail", "Medição de visitas e conversões", f.trackers.length ? f.trackers.join(", ") : "nenhuma ferramenta detectada", "Sem Analytics/pixel você não sabe de onde vêm os leads nem o que funciona, e não consegue fazer remarketing.", "Instale o Google Analytics 4 (via Tag Manager) e configure eventos de clique no WhatsApp e envio de formulário.", "médio", "Google Analytics");
   }
 
-  /* --- notas --- */
-  const credit = { pass: 1, warn: 0.5, fail: 0 };
-  const scores = {};
-  Object.keys(CATS).forEach((c) => {
-    const cs = checks.filter((k) => k.cat === c && k.status !== "info");
-    const W = cs.reduce((a, k) => a + k.w, 0);
-    scores[c] = W ? Math.round((cs.reduce((a, k) => a + k.w * credit[k.status], 0) / W) * 100) : null;
-  });
-  const wavg = (keys) => {
-    let s = 0, w = 0;
-    keys.forEach(([k, wt]) => { if (scores[k] != null) { s += scores[k] * wt; w += wt; } });
-    return w ? Math.round(s / w) : null;
-  };
-  const overall = wavg(Object.entries(CATS).map(([k, v]) => [k, v.w]));
-  // Potencial de alcance: chance de ser encontrado e clicado (busca + compartilhamento)
-  const reach = wavg([["index", 0.24], ["onpage", 0.22], ["content", 0.16], ["perf", 0.14], ["mobile", 0.08], ["social", 0.08], ["schema", 0.05], ["links", 0.03]]);
-  // Poder de conversão: chance de o visitante virar lead
-  const conversion = wavg([["conv", 0.55], ["trust", 0.25], ["perf", 0.1], ["mobile", 0.1]]);
-
-  // Bloqueio de indexação anula o alcance: se o Google não pode mostrar a página, nada mais importa.
-  const blocked = checks.some((c) => c.status === "fail" && ["noindex", "lh-crawl"].includes(c.id) || (c.id === "robots" && c.status === "fail") || (c.id === "status" && c.status === "fail"));
-  let reachF = reach, overallF = overall;
-  if (blocked) { reachF = reach == null ? null : Math.min(reach, 15); overallF = overall == null ? null : Math.min(overall, 35); }
+  const S = computeScores(checks);
   checks.forEach((c) => (c.pri = priorityOf(c)));
   const city = f?.address?.addressLocality || null;
-  return { url, host: hostOf(url), when: new Date().toISOString(), page: { status: page.status, source: page.source, ttfb: page.ttfbMs, bytes: page.bytes, headers: hdr, robots: page.robots, sitemap: page.sitemap }, f, P, PD, kw, checks, scores, overall: overallF, reach: reachF, conversion, blocked, longTail: longTail(kw.focus, city), suggest: extras.suggest || null, demo: !!extras.demo, notes: extras.notes || [] };
+  return { url, host: hostOf(url), when: new Date().toISOString(), page: { status: page.status, source: page.source, ttfb: page.ttfbMs, bytes: page.bytes, headers: hdr, robots: page.robots, sitemap: page.sitemap }, f, P, PD, kw, checks, scores: S.scores, overall: S.overall, reach: S.reach, conversion: S.conversion, blocked: S.blocked, longTail: longTail(kw.focus, city), suggest: extras.suggest || null, demo: !!extras.demo, notes: extras.notes || [] };
+}
+
+/* notas a partir das verificações; "done" = itens que o usuário marcou como corrigidos (simulador) */
+function computeScores(checks, done = null) {
+  const st = (c) => (done && done.has(c.id) && c.status !== "info" ? "pass" : c.status);
+  const credit = { pass: 1, warn: 0.5, fail: 0 };
+  const scores = {};
+  Object.keys(CATS).forEach((cat) => {
+    const cs = checks.filter((k) => k.cat === cat && k.status !== "info");
+    const W = cs.reduce((a, k) => a + k.w, 0);
+    scores[cat] = W ? Math.round((cs.reduce((a, k) => a + k.w * credit[st(k)], 0) / W) * 100) : null;
+  });
+  const wavg = (keys) => {
+    let sum = 0, w = 0;
+    keys.forEach(([k, wt]) => { if (scores[k] != null) { sum += scores[k] * wt; w += wt; } });
+    return w ? Math.round(sum / w) : null;
+  };
+  let overall = wavg(Object.entries(CATS).map(([k, v]) => [k, v.w]));
+  // Potencial de alcance: chance de ser encontrado e clicado (busca + compartilhamento)
+  let reach = wavg([["index", 0.24], ["onpage", 0.22], ["content", 0.16], ["perf", 0.14], ["mobile", 0.08], ["social", 0.08], ["schema", 0.05], ["links", 0.03]]);
+  // Poder de conversão: chance de o visitante virar lead
+  const conversion = wavg([["conv", 0.55], ["trust", 0.25], ["perf", 0.1], ["mobile", 0.1]]);
+  // Bloqueio de indexação anula o alcance: se o Google não pode mostrar a página, nada mais importa.
+  const blocked = checks.some((c) => st(c) === "fail" && ["noindex", "lh-crawl", "robots", "status"].includes(c.id));
+  if (blocked) { reach = reach == null ? null : Math.min(reach, 15); overall = overall == null ? null : Math.min(overall, 35); }
+  return { scores, overall, reach, conversion, blocked };
 }
 
 let _ctx;
@@ -1081,34 +1203,44 @@ function ring(score, size = 150, stroke = 12, label = "") {
   return `<svg viewBox="-6 -6 ${size + 12} ${size + 12}" role="img" aria-label="${esc(label)} ${score ?? "sem dados"} de 100">
     ${ticks}
     <circle cx="${size / 2}" cy="${size / 2}" r="${r}" fill="none" stroke="var(--line)" stroke-width="${stroke}"/>
-    <circle cx="${size / 2}" cy="${size / 2}" r="${r}" fill="none" stroke="${col}" stroke-width="${stroke}" stroke-linecap="round" stroke-dasharray="${(c * v) / 100} ${c}" transform="rotate(-90 ${size / 2} ${size / 2})" style="filter:drop-shadow(0 0 8px ${col})"/>
-    <text x="50%" y="50%" text-anchor="middle" dominant-baseline="central" fill="var(--ink)" style="font-family:var(--f-display);font-weight:900;font-size:${size * 0.27}px">${score ?? "–"}</text>
+    <circle class="arc" cx="${size / 2}" cy="${size / 2}" r="${r}" fill="none" stroke="${col}" stroke-width="${stroke}" stroke-linecap="round" stroke-dasharray="${(c * v) / 100} ${c}" transform="rotate(-90 ${size / 2} ${size / 2})" style="filter:drop-shadow(0 0 8px ${col})"/>
+    <text x="${size / 2}" y="${size / 2 + 1}" text-anchor="middle" dominant-baseline="central" fill="var(--ink)" style="font-family:var(--f-display);font-weight:900;font-variant-numeric:tabular-nums;font-size:${(size * (String(score ?? "–").length >= 3 ? 0.2 : 0.26)).toFixed(1)}px"${score != null ? ` data-count="${score}"` : ""}>${score ?? "–"}</text>
   </svg>`;
 }
 
 function flowerSVG(scores, overall) {
+  const compact = innerWidth < 600; // no celular os nomes ficam na lista abaixo da flor
   const keys = Object.keys(CATS), n = keys.length, r0 = 46, R = 190;
   let petals = "", ghosts = "", labels = "";
   keys.forEach((k, i) => {
     const a = (i / n) * 360 - 90, rad = (a * Math.PI) / 180;
-    const s = scores[k], L = (R - r0) * ((s ?? 0) / 100) + 14;
+    const s = scores[k];
     const W = Math.min(((Math.PI * (r0 + (R - r0) * 0.55)) / n) * 0.95, 42);
     const path = (len, w) => `M${r0},0 C${r0 + len * 0.25},${-w} ${r0 + len * 0.85},${-w * 0.95} ${r0 + len},0 C${r0 + len * 0.85},${w * 0.95} ${r0 + len * 0.25},${w} ${r0},0Z`;
     ghosts += `<path d="${path(R - r0, W)}" transform="rotate(${a})" fill="none" stroke="var(--line)" stroke-dasharray="3 4"/>`;
-    petals += `<g class="petal" data-cat="${k}" style="color:${CATS[k].c};animation-delay:${i * 70}ms"><path d="${path(L, W * (0.55 + 0.45 * ((s ?? 0) / 100)))}" transform="rotate(${a})" fill="url(#pg-${k})" stroke="${CATS[k].c}" stroke-width="1.2"/></g>`;
-    const lx = Math.cos(rad) * (R + 26), ly = Math.sin(rad) * (R + 26);
-    const anchor = Math.abs(Math.cos(rad)) < 0.25 ? "middle" : Math.cos(rad) > 0 ? "start" : "end";
-    labels += `<text x="${lx.toFixed(1)}" y="${ly.toFixed(1)}" text-anchor="${anchor}" dominant-baseline="central">${esc(CATS[k].name)}</text>
-      <text class="val" x="${lx.toFixed(1)}" y="${(ly + 18).toFixed(1)}" text-anchor="${anchor}" dominant-baseline="central" fill="${CATS[k].c}">${s ?? "–"}</text>`;
+    if (s != null) {
+      const L = Math.max(14, (R - r0) * (s / 100));
+      petals += `<g class="petal" data-cat="${k}" style="color:${CATS[k].c};animation-delay:${i * 70}ms"><path d="${path(L, W * (0.55 + 0.45 * (s / 100)))}" transform="rotate(${a})" fill="url(#pg-${k})" stroke="${CATS[k].c}" stroke-width="1.2"/></g>`;
+    }
+    if (!compact) {
+      const cos = Math.cos(rad), sin = Math.sin(rad);
+      const ax = cos * (R + 30), ay = sin * (R + 30);
+      const anchor = Math.abs(cos) < 0.3 ? "middle" : cos > 0 ? "start" : "end";
+      // metade de cima: nome em cima do valor, afastado da pétala; metade de baixo: nome primeiro
+      const [ny, vy] = sin < -0.3 ? [ay - 18, ay] : sin > 0.3 ? [ay, ay + 17] : [ay - 8, ay + 9];
+      labels += `<text x="${ax.toFixed(1)}" y="${ny.toFixed(1)}" text-anchor="${anchor}" dominant-baseline="central">${esc(CATS[k].name)}</text>
+      <text class="val" x="${ax.toFixed(1)}" y="${vy.toFixed(1)}" text-anchor="${anchor}" dominant-baseline="central" fill="${s == null ? "var(--ink-3)" : CATS[k].c}">${s ?? "–"}</text>`;
+    }
   });
   const grads = keys.map((k) => `<radialGradient id="pg-${k}" cx="0" cy="0" r="${R}" gradientUnits="userSpaceOnUse"><stop offset="${r0 / R}" stop-color="${CATS[k].c}" stop-opacity=".15"/><stop offset="1" stop-color="${CATS[k].c}" stop-opacity=".85"/></radialGradient>`).join("");
   const rings = [0.25, 0.5, 0.75, 1].map((t) => `<circle r="${r0 + (R - r0) * t}" fill="none" stroke="var(--line)" stroke-width=".6" opacity=".6"/>`).join("");
-  return `<svg viewBox="-330 -250 660 510" role="img" aria-label="Flor de métricas: nota por área">
+  const vb = compact ? "-200 -200 400 400" : "-340 -262 680 530";
+  return `<svg viewBox="${vb}" role="img" aria-label="Flor de métricas: nota por área">
     <defs>${grads}<radialGradient id="core"><stop offset="0" stop-color="var(--marigold)"/><stop offset="1" stop-color="var(--coral)"/></radialGradient></defs>
     ${rings}${ghosts}${petals}
     <circle r="${r0 - 4}" fill="url(#core)"/>
     ${Array.from({ length: 80 }, (_, i) => i).filter((i) => 4.6 * Math.sqrt(i) > 25 && 4.6 * Math.sqrt(i) < 40).map((i) => { const ang = i * 2.39996, rr = 4.6 * Math.sqrt(i); return `<circle cx="${(Math.cos(ang) * rr).toFixed(1)}" cy="${(Math.sin(ang) * rr).toFixed(1)}" r="1.6" fill="#1a0b1f" opacity=".4"/>`; }).join("")}
-    <text y="-2" text-anchor="middle" dominant-baseline="central" style="font-family:var(--f-display);font-weight:900;font-size:30px;fill:#1a0b1f">${overall ?? "–"}</text>
+    <text y="1" text-anchor="middle" dominant-baseline="central" style="font-family:var(--f-display);font-weight:900;font-size:${String(overall ?? "–").length >= 3 ? 24 : 30}px;fill:#1a0b1f">${overall ?? "–"}</text>
     ${labels}
   </svg>`;
 }
@@ -1135,12 +1267,12 @@ function cloudSVG(list) {
     }
     if (t < 2000) placed.push({ x, y, r, k, c: palette[i % palette.length] });
   });
-  return `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Nuvem de palavras-chave">
+  return `<svg viewBox="0 0 ${W} ${H}" role="group" aria-label="Nuvem de palavras-chave: toque numa bolha para ver detalhes">
     ${placed.map((p) => {
       const words = p.k.term.split(" "); const fs = clamp(p.r / Math.max(4, p.k.term.length * 0.34), 10, 22);
       const lines = p.k.term.length > 12 && words.length > 1 ? [words.slice(0, Math.ceil(words.length / 2)).join(" "), words.slice(Math.ceil(words.length / 2)).join(" ")] : [p.k.term];
       const fs2 = lines.length > 1 ? clamp(p.r / Math.max(4, Math.max(...lines.map((l) => l.length)) * 0.32), 10, 20) : fs;
-      return `<g><title>${esc(p.k.term)} · ${p.k.count}×</title><circle cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="${p.r.toFixed(1)}" fill="${p.c}" fill-opacity=".18" stroke="${p.c}" stroke-width="1.5"/>
+      return `<g class="bub" data-kw="${esc(p.k.key)}" role="button" tabindex="0" aria-label="${esc(p.k.term)}: ver detalhes" style="animation-delay:${(-(p.x + p.y) % 6000) / 1000}s"><title>${esc(p.k.term)} · ${p.k.count}×</title><circle cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="${p.r.toFixed(1)}" fill="${p.c}" fill-opacity=".18" stroke="${p.c}" stroke-width="1.5"/>
         ${lines.map((l, j) => `<text x="${p.x.toFixed(1)}" y="${(p.y + (j - (lines.length - 1) / 2) * fs2 * 1.1).toFixed(1)}" text-anchor="middle" dominant-baseline="central" style="font-size:${fs2.toFixed(1)}px">${esc(l)}</text>`).join("")}</g>`;
     }).join("")}
   </svg>`;
@@ -1171,7 +1303,7 @@ function stageIcon(i) {
 /* ==========================================================================
    7. renderização do relatório
    ========================================================================== */
-let REPORT = null, filterPri = "all", filterCat = "all", lhView = "mobile", planAll = false, goodAll = false;
+let REPORT = null, filterPri = "all", filterCat = "all", lhView = "mobile", planAll = false, goodAll = false, flowerMode = "now", DONE = new Set(), _spy = null;
 
 function verdictText(R) {
   const crit = R.checks.filter((c) => c.pri === "crit"), high = R.checks.filter((c) => c.pri === "high");
@@ -1187,6 +1319,7 @@ function verdictText(R) {
 }
 
 function render(R) {
+  if (R !== REPORT) { DONE = new Set(R.demo ? [] : store.get("done:" + R.url, [])); flowerMode = "now"; }
   REPORT = R; filterPri = "all"; filterCat = "all"; lhView = "mobile"; planAll = false; goodAll = false;
   const f = R.f, P = R.P;
   const st = stageOf(R.overall);
@@ -1200,13 +1333,14 @@ function render(R) {
   ${R.demo ? `<div class="demo-flag"><b>exemplo</b><span>Relatório de demonstração de um site fictício (Ateliê Lume). Cole a URL do seu site acima para analisar de verdade.</span></div>` : ""}
   ${!f ? `<div class="demo-flag" style="border-color:var(--bad)"><b style="color:var(--bad)">relatório parcial</b><span>A página não pôde ser lida, então só entraram os dados de performance do Google. <b>SEO on-page, palavras-chave, redes sociais, dados estruturados e conversão não foram avaliados</b>, e as notas abaixo tendem a sair mais altas do que a realidade. Conecte a Edge Function do Supabase (engrenagem ⚙) para o relatório completo.</span></div>` : ""}
   ${R.notes.length ? `<div class="demo-flag"><b>aviso</b><span>${R.notes.map(esc).join(" · ")}</span></div>` : ""}
+  ${navHTML(R)}
 
   <section class="section" style="margin-top:10px" id="resumo">
     <div class="summary">
       <div class="panel">
         <div class="site-id">
           <img src="${esc(favicon)}" alt="" onerror="this.onerror=null;this.src=document.querySelector('link[rel=icon]').href">
-          <div class="t"><h3>${esc(f?.og.site || (f?.title ? f.title.split(/\s[|\-–—·]\s/).map((x) => x.trim()).sort((a, b) => a.length - b.length)[0] : "") || R.host)}</h3><a href="${esc(R.url)}" target="_blank" rel="noopener">${esc(R.url)}</a></div>
+          <div class="t"><h2>${esc(f?.og.site || (f?.title ? f.title.split(/\s[|\-–—·]\s/).map((x) => x.trim()).sort((a, b) => a.length - b.length)[0] : "") || R.host)}</h2><a href="${esc(R.url)}" target="_blank" rel="noopener">${esc(R.url)}</a></div>
         </div>
         <div class="stage">
           <div class="stage-badge">${stageIcon(st.i)}<div><small>${st.sub}</small><b>${st.name}</b></div></div>
@@ -1234,11 +1368,9 @@ function render(R) {
 
   ${vine}
   <section class="section" id="flor">
-    <div class="sec-head"><div><span class="k">mapa de crescimento</span><h2>A flor do seu site</h2><p>Cada pétala é uma área avaliada. Quanto mais longa e cheia, melhor a nota. Pétalas curtas mostram onde regar primeiro. Toque numa pétala para filtrar o plano de ação.</p></div></div>
-    <div class="flower-grid">
-      <div class="flower panel">${flowerSVG(R.scores, R.overall)}</div>
-      <div class="cats">${Object.entries(CATS).map(([k, c]) => `<button type="button" class="cat" data-cat="${k}" style="--c:${c.c}"><i></i><span>${c.name}</span><b class="num">${R.scores[k] ?? "–"}</b><span class="bar"><em style="width:${R.scores[k] ?? 0}%"></em></span></button>`).join("")}</div>
-    </div>
+    <div class="sec-head"><div><span class="k">mapa de crescimento</span><h2>A flor do seu site</h2><p>Cada pétala é uma área avaliada. Quanto mais longa e cheia, melhor a nota. Pétalas curtas mostram onde regar primeiro. Toque numa pétala para filtrar o plano de ação.</p></div>
+      <div class="seg" role="group" aria-label="Qual flor mostrar"><button type="button" data-fmode="now" aria-pressed="true">Hoje</button><button type="button" data-fmode="sim" aria-pressed="false">Depois das correções</button></div></div>
+    <div class="flower-grid" id="flowerBox"></div>
   </section>
 
   ${vine}
@@ -1246,6 +1378,7 @@ function render(R) {
     <div class="sec-head"><div><span class="k">o que fazer, em ordem</span><h2>Plano de ação</h2><p>Itens ordenados por prioridade (impacto no alcance × gravidade). A etiqueta <b>vitória rápida</b> marca o que tem impacto relevante e pouco esforço.</p></div>
       <div class="actions"><button class="btn" type="button" id="copyPlan"><svg viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>Copiar plano</button>${window.self === window.top ? `<button class="btn" type="button" id="dlJson"><svg viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M4 21h16"/></svg>Baixar JSON</button><button class="btn" type="button" id="printBtn"><svg viewBox="0 0 24 24"><path d="M6 9V3h12v6M6 18H4v-6h16v6h-2M8 14h8v7H8z"/></svg>Imprimir / PDF</button>` : ""}</div>
     </div>
+    <div class="sim panel" id="sim" aria-live="polite"></div>
     ${quickWins(R)}
     <div class="filters" id="priFilters" style="margin-top:22px"></div>
     <div class="filters" id="catFilters" style="margin-top:8px"></div>
@@ -1262,7 +1395,7 @@ function render(R) {
   ${P || R.PD ? `${vine}
   <section class="section" id="velocidade">
     <div class="sec-head"><div><span class="k">velocidade e experiência</span><h2>Core Web Vitals</h2><p>Métricas oficiais que o Google usa para avaliar a experiência da página. Faixa verde = bom, âmbar = precisa melhorar, vermelha = ruim.</p></div>
-      ${R.PD ? `<div class="lh-tabs" role="tablist"><button type="button" class="on" data-lh="mobile">celular</button><button type="button" data-lh="desktop">desktop</button></div>` : ""}
+      ${R.PD ? `<div class="lh-tabs" role="tablist" aria-label="Dispositivo"><button type="button" role="tab" aria-selected="true" class="on" data-lh="mobile">celular</button><button type="button" role="tab" aria-selected="false" data-lh="desktop">desktop</button></div>` : ""}
     </div>
     <div id="vitalsBox"></div>
   </section>` : ""}
@@ -1274,10 +1407,11 @@ function render(R) {
       <div class="panel cloud">
         ${R.kw.focus ? `<div class="focus-kw"><span class="mono" style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)">tema principal detectado</span><b>${esc(R.kw.focus.term)}</b></div>` : ""}
         ${cloudSVG(R.kw.list)}
+        <div class="kw-detail" id="kwDetail">${kwDetailHTML(R.kw.focus || R.kw.list[0])}</div>
       </div>
       <div class="panel suggest">
-        <div class="sg"><h5>buscas reais no Google (autocomplete)</h5>${suggestHTML(R)}</div>
-        <div class="sg"><h5>ideias de cauda longa para novas páginas ou seções</h5><div class="sg-list">${R.longTail.map((x) => `<button type="button" data-copy="${esc(x.s)}" title="Copiar"><span>${esc(x.s)}</span><i style="--ic:${x.i[1]}">${x.i[0]}</i></button>`).join("") || "<span class='hint'>—</span>"}</div>
+        <div class="sg"><p class="sg-h">buscas reais no Google (autocomplete)</p>${suggestHTML(R)}</div>
+        <div class="sg"><p class="sg-h">ideias de cauda longa para novas páginas ou seções</p><div class="sg-list">${R.longTail.map((x) => `<button type="button" data-copy="${esc(x.s)}" title="Copiar"><span>${esc(x.s)}</span><i style="--ic:${x.i[1]}">${x.i[0]}</i></button>`).join("") || "<span class='hint'>—</span>"}</div>
           <p class="hint">Ideias geradas por padrões de intenção de busca. Confirme o volume no Google Keyword Planner ou no Google Trends antes de investir.</p></div>
       </div>
     </div>
@@ -1291,7 +1425,17 @@ function render(R) {
   <section class="section" id="vitrine">
     <div class="sec-head"><div><span class="k">a vitrine</span><h2>Como seu link aparece</h2><p>Simulação do resultado no Google e do cartão ao compartilhar no WhatsApp/LinkedIn. É aqui que se ganha ou se perde o clique.</p></div></div>
     <div class="previews">
-      <div>${serpHTML(R)}</div>
+      <div class="serp-col"><div id="serpBox">${serpHTML(R)}</div>
+        <div class="serp-edit panel">
+          <h3>Laboratório de título</h3>
+          <p class="hint">Reescreva e veja na hora como fica no Google. Nada muda no seu site até você colar as tags nele.</p>
+          <label for="serpT">Título <span class="mono" id="serpTc"></span></label>
+          <textarea id="serpT" rows="2" spellcheck="true">${esc(R.f.title || "")}</textarea>
+          <label for="serpD">Descrição <span class="mono" id="serpDc"></span></label>
+          <textarea id="serpD" rows="3" spellcheck="true">${esc(R.f.desc || "")}</textarea>
+          <div class="actions"><button class="btn" type="button" id="serpCopy"><svg viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>Copiar tags</button><button class="btn" type="button" id="serpReset">Voltar ao original</button></div>
+        </div>
+      </div>
       <div>${ogHTML(R)}</div>
     </div>
   </section>
@@ -1328,7 +1472,7 @@ function render(R) {
   ${vine}
   <section class="section" id="metodo">
     <div class="sec-head"><div><span class="k">de onde vêm as notas</span><h2>Método</h2><p>Cada verificação tem um peso de 1 a 10 conforme o impacto documentado no alcance. Aprovado vale 100%, atenção vale 50%, falha vale 0. A prioridade combina peso e gravidade.</p></div></div>
-    <div class="method">
+    <div class="method" data-tilt-children>
       <div class="panel"><b>Saúde geral</b><p>Média ponderada das 10 áreas: indexação 18%, on-page 16%, performance 13%, conteúdo 12%, mobile 8%, social 7%, confiança 7%, conversão 7%, schema 6%, links 6%.</p></div>
       <div class="panel"><b>Potencial de alcance</b><p>Foca em ser encontrado e clicado: indexação 24%, on-page 22%, conteúdo 16%, performance 14%, mobile 8%, social 8%, schema 5%, links 3%.</p></div>
       <div class="panel"><b>Poder de conversão</b><p>Foca em transformar visita em lead: conversão 55%, confiança 25%, performance 10%, mobile 10%.</p></div>
@@ -1340,9 +1484,10 @@ function render(R) {
 
   const root = $("#report");
   root.innerHTML = html;
-  renderFilters(); renderPlan(); renderGood();
+  renderFlower(); renderSim(); renderFilters(); renderPlan(); renderGood();
   if (P || R.PD) renderVitals();
-  wireReport();
+  if (f) updateSerp();
+  wireReport(); startSpy(); animateCounts(root);
 }
 
 function demoScreen() {
@@ -1357,7 +1502,7 @@ function demoScreen() {
 function quickWins(R) {
   const q = R.checks.filter((c) => c.pri && c.pri !== "low" && EFF[c.effort] === 1).sort((a, b) => PRI[a.pri].o - PRI[b.pri].o || b.w - a.w).slice(0, 3);
   if (!q.length) return "";
-  return `<div class="quick">${q.map((c) => `<div class="panel" style="--pc:${PRI[c.pri].c};--pbg:${PRI[c.pri].bg}"><span class="pill qw">vitória rápida</span> <span class="pill p">${PRI[c.pri].name}</span><h4>${esc(c.title)}</h4><p>${c.fix}</p></div>`).join("")}</div>`;
+  return `<div class="quick">${q.map((c) => `<div class="panel" data-tilt style="--pc:${PRI[c.pri].c};--pbg:${PRI[c.pri].bg}"><span class="pill qw">vitória rápida</span> <span class="pill p">${PRI[c.pri].name}</span><h3>${esc(c.title)}</h3><p>${c.fix}</p></div>`).join("")}</div>`;
 }
 
 function renderFilters() {
@@ -1374,10 +1519,13 @@ function renderPlan() {
   const shown = planAll ? items : items.slice(0, 10);
   $("#plan").innerHTML = shown.map((c) => {
     const p = PRI[c.pri], qw = c.pri !== "low" && EFF[c.effort] === 1;
-    return `<article class="item" style="--pc:${p.c};--pbg:${p.bg}"><i></i><div class="body">
-      <div class="row1"><span class="pill p">${p.name}</span><span class="pill">${esc(CATS[c.cat].name)}</span><span class="pill">esforço ${c.effort}</span>${qw ? `<span class="pill qw">vitória rápida</span>` : ""}
+    const done = DONE.has(c.id);
+    return `<article class="item${done ? " done" : ""}" data-item="${c.id}" style="--pc:${p.c};--pbg:${p.bg}"><i></i>
+      <button type="button" class="tick" data-done="${c.id}" aria-pressed="${done}" title="${done ? "Desmarcar" : "Marcar como feito"}" aria-label="${done ? "Desmarcar" : "Marcar como feito"}: ${esc(c.title)}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></button>
+      <div class="body">
+      <div class="row1"><span class="pill p">${p.name}</span><span class="pill ok-pill">feito</span><span class="pill">${esc(CATS[c.cat].name)}</span><span class="pill">esforço ${c.effort}</span>${qw ? `<span class="pill qw">vitória rápida</span>` : ""}
         <span class="pill" title="Peso ${c.w}/10">impacto <span class="meter">${[2, 4, 6, 8, 10].map((t) => `<i class="${c.w >= t - 1 ? "on" : ""}"></i>`).join("")}</span></span></div>
-      <h4>${esc(c.title)}</h4>
+      <h3>${esc(c.title)}</h3>
       <div class="val">${c.status === "fail" ? "✕" : "!"} ${esc(c.value)}</div>
       <details><summary>Por que importa e como corrigir</summary><div class="fix"><p>${esc(c.why)}</p><p><b>Como corrigir:</b> ${c.fix}</p><span class="src">fonte: ${esc(c.src)}</span></div></details>
     </div></article>`;
@@ -1403,8 +1551,9 @@ function renderVitals() {
     ["TTFB", "resposta do servidor", fld?.ttfb ?? P.ttfb, 800, 1800, 2800, fmtMs],
     ["Peso", "total transferido", P.weight, 1.6e6, 3e6, 4.5e6, fmtKB],
   ];
-  box.innerHTML = `<div class="vitals">${V.map(([k, d, v, g, p, m, fm]) => `<div class="panel vital"><div class="h"><span>${k}</span><b class="num" style="color:${v == null ? "var(--ink-3)" : v <= g ? "var(--good)" : v <= p ? "var(--warn)" : "var(--bad)"}">${fm(v)}</b></div>${zoneBar(v, g, p, m)}<p>${d} · bom até ${fm(g)}</p></div>`).join("")}</div>
+  box.innerHTML = `<div class="vitals">${V.map(([k, d, v, g, p, m, fm]) => `<div class="panel vital" data-tilt><div class="h"><span>${k}</span><b class="num" style="color:${v == null ? "var(--ink-3)" : v <= g ? "var(--good)" : v <= p ? "var(--warn)" : "var(--bad)"}">${fm(v)}</b></div>${zoneBar(v, g, p, m)}<p>${d} · bom até ${fm(g)}</p></div>`).join("")}</div>
     <div class="panel" style="margin-top:14px"><div class="lh-row">${[["perf", "Performance"], ["a11y", "Acessibilidade"], ["bp", "Boas práticas"], ["seo", "SEO"]].map(([k, n]) => `<div class="lh">${ring(P[k], 78, 7, n)}<span>${n}</span></div>`).join("")}</div>
+    ${P.perf == null && P.err ? `<p class="field-note" style="background:var(--bad-bg)"><b>O Google não conseguiu medir a velocidade desta página${/LCP/.test(P.err) ? " porque não detectou o conteúdo principal (NO_LCP)" : ""}.</b> Por isso LCP, bloqueio e a nota de performance aparecem como “—”. Veja o item correspondente no plano de ação.</p>` : ""}
     <p class="field-note">${fld ? `Métricas de LCP, INP e CLS vindas de <b>usuários reais do Chrome</b> nos últimos 28 dias${fld.origin ? " (média do domínio inteiro)" : ""}. O Google usa esses números no ranqueamento.` : `Este site ainda não tem tráfego suficiente no Chrome UX Report, então os números são de <b>laboratório</b> (celular simulado com 4G lento). Servem como diagnóstico, não como número oficial.`}</p></div>`;
 }
 
@@ -1415,18 +1564,21 @@ function suggestHTML(R) {
   return groups.map(([q, list]) => `<p class="hint" style="margin:6px 0">a partir de <b>${esc(q)}</b></p><div class="sg-list">${list.map((s) => { const i = intentOf(s); return `<button type="button" data-copy="${esc(s)}" title="Copiar"><span>${esc(s)}</span><i style="--ic:${i[1]}">${i[0]}</i></button>`; }).join("")}</div>`).join("") + `<p class="hint">Sugestões do autocomplete refletem buscas frequentes de verdade. Use as que combinam com sua oferta como títulos de seções, FAQs ou novas páginas.</p>`;
 }
 
-function serpHTML(R) {
+function serpHTML(R, T = R.f.title, D = R.f.desc) {
   const f = R.f;
   const cut = (t, px, font) => { if (textPx(t, font) <= px) return t; let s = t; while (s.length && textPx(s + " …", font) > px) s = s.slice(0, -1); return s.trim() + " …"; };
-  const title = f.title || R.host, desc = f.desc || (f.text || "").slice(0, 160);
-  const tpx = textPx(f.title, "20px Arial"), dpx = textPx(f.desc, "14px Arial");
+  const title = T || R.host, desc = D || (f.text || "").slice(0, 160);
+  const tpx = textPx(T, "20px Arial"), dpx = textPx(D, "14px Arial");
+  // o Google destaca em negrito os termos buscados; simulamos com a palavra-chave principal
+  const kw = R.kw.focus?.term;
+  const bold = (txt) => { const e = esc(txt); if (!kw) return e; const re = new RegExp("(" + esc(kw).replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + ")", "gi"); return e.replace(re, "<b>$1</b>"); };
   const crumbs = R.url.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "").split("/").join(" › ");
   const fav = f.favicon || `https://www.google.com/s2/favicons?domain=${encodeURIComponent(R.host)}&sz=64`;
   const bar = (v, max) => `<div class="bar"><em style="width:${clamp((v / max) * 100, 2, 100)}%;background:${v > max ? "var(--bad)" : v < max * 0.45 ? "var(--warn)" : "var(--good)"}"></em></div>`;
   return `<div class="serp" aria-label="Simulação de resultado do Google">
       <div class="site"><span class="fav"><img src="${esc(fav)}" alt="" onerror="this.remove()"></span><div><div class="sn">${esc(f.og.site || R.host)}</div><div class="su">${esc(crumbs)}</div></div></div>
       <div class="st">${esc(cut(title, 600, "20px Arial"))}</div>
-      <div class="sd">${f.desc ? "" : "<i style='opacity:.7'>[sem description: o Google escolhe um trecho] </i>"}${esc(cut(desc, 920, "14px Arial"))}</div>
+      <div class="sd">${D ? "" : "<i style='opacity:.7'>[sem description: o Google escolhe um trecho] </i>"}${bold(cut(desc, 920, "14px Arial"))}</div>
     </div>
     <div class="px"><span>título: ${Math.round(tpx)} / 600 px</span>${bar(tpx, 600)}<span>descrição: ${Math.round(dpx)} / 920 px</span>${bar(dpx, 920)}</div>`;
 }
@@ -1438,31 +1590,154 @@ function ogHTML(R) {
   </div><p class="hint">Pré-visualização aproximada de WhatsApp, LinkedIn e Facebook. Teste o real no Facebook Sharing Debugger e no LinkedIn Post Inspector.</p>`;
 }
 
-function planMarkdown(R) {
-  const items = R.checks.filter((c) => c.pri).sort((a, b) => PRI[a.pri].o - PRI[b.pri].o || b.w - a.w);
-  const strip = (s) => String(s).replace(/<[^>]+>/g, "").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"').replace(/&amp;/g, "&");
-  return `# Plano de ação · ${R.host}\n${R.url}\nSaúde ${R.overall} · Alcance ${R.reach} · Conversão ${R.conversion}\n\n` +
-    items.map((c, i) => `${i + 1}. [${PRI[c.pri].name}] ${c.title} (${CATS[c.cat].name}, esforço ${c.effort})\n   Situação: ${c.value}\n   Como corrigir: ${strip(c.fix)}`).join("\n\n");
+/* ---------- navegação do relatório ---------- */
+function navHTML(R) {
+  const items = [["resumo", "Resumo"], ["flor", "Flor"], ["plano", "Plano"], ["bom", "O que está bom"], (R.P || R.PD) && ["velocidade", "Velocidade"], R.f && ["palavras", "Palavras-chave"], R.f && ["vitrine", "Vitrine"], R.f && ["estrutura", "Raio-X"], ["metodo", "Método"]].filter(Boolean);
+  const left = R.checks.filter((c) => c.pri).length;
+  return `<nav class="rnav" aria-label="Seções do relatório"><div class="rnav-in">${items.map(([id, l]) => `<button type="button" data-nav="${id}">${l}${id === "plano" ? ` <b id="navLeft" class="num">${left}</b>` : ""}</button>`).join("")}</div></nav>`;
+}
+function startSpy() {
+  _spy?.disconnect();
+  if (!("IntersectionObserver" in window)) return;
+  _spy = new IntersectionObserver((ents) => {
+    ents.forEach((en) => {
+      if (!en.isIntersecting) return;
+      const b = $(`.rnav [data-nav="${en.target.id}"]`); if (!b) return;
+      $$(".rnav [data-nav]").forEach((x) => x.classList.toggle("on", x === b));
+      const bar = b.parentElement; bar.scrollTo({ left: b.offsetLeft - bar.clientWidth / 2 + b.clientWidth / 2, behavior: reduceMotion ? "auto" : "smooth" });
+    });
+  }, { rootMargin: "-40% 0px -55% 0px" });
+  $$("#report .section[id]").forEach((sec) => _spy.observe(sec));
 }
 
-function wireReport() {
-  const root = $("#report");
-  root.addEventListener("click", onReportClick);
-  $$(".flower .petal", root).forEach((p) => {
+/* ---------- números que contam ---------- */
+function animateCounts(root) {
+  if (reduceMotion) return;
+  $$("[data-count]", root).forEach((el) => {
+    const to = +el.dataset.count, t0 = performance.now(), dur = 1100;
+    const step = (t) => { const k = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - k, 3); el.textContent = Math.round(to * e); if (k < 1) requestAnimationFrame(step); };
+    el.textContent = "0"; requestAnimationFrame(step);
+  });
+}
+function tweenText(el, from, to) {
+  if (!el) return;
+  if (reduceMotion || from == null || to == null) { el.textContent = to ?? "–"; return; }
+  const t0 = performance.now(), dur = 600;
+  const step = (t) => { const k = Math.min(1, (t - t0) / dur); el.textContent = Math.round(from + (to - from) * (1 - Math.pow(1 - k, 3))); if (k < 1) requestAnimationFrame(step); };
+  requestAnimationFrame(step);
+}
+
+/* ---------- flor: hoje × depois das correções ---------- */
+function renderFlower() {
+  const box = $("#flowerBox"); if (!box) return;
+  const sim = flowerMode === "sim";
+  const S = sim ? computeScores(REPORT.checks, DONE) : { scores: REPORT.scores, overall: REPORT.overall };
+  $$("[data-fmode]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.fmode === flowerMode)));
+  box.innerHTML = `<div class="flower panel">${flowerSVG(S.scores, S.overall)}${sim && !DONE.size ? `<p class="flower-note">Marque itens como feitos no plano de ação para ver a flor crescer.</p>` : ""}</div>
+    <div class="cats">${Object.entries(CATS).map(([k, c]) => {
+      const v = S.scores[k], d = sim && v != null && REPORT.scores[k] != null ? v - REPORT.scores[k] : 0;
+      return `<button type="button" class="cat${v == null ? " nodata" : ""}" data-cat="${k}" style="--c:${c.c}" title="${v == null ? "Sem dados nesta análise" : ""}"><i></i><span>${c.name}</span><b class="num">${v ?? "–"}${d > 0 ? `<sup>+${d}</sup>` : ""}</b><span class="bar"><em style="width:${v ?? 0}%"></em></span></button>`;
+    }).join("")}</div>`;
+  $$(".flower .petal", box).forEach((p) => {
     p.addEventListener("mouseenter", () => $(`.cat[data-cat="${p.dataset.cat}"]`)?.classList.add("hl"));
     p.addEventListener("mouseleave", () => $$(".cat.hl").forEach((c) => c.classList.remove("hl")));
   });
-  $$(".cat", root).forEach((c) => {
+  $$(".cat", box).forEach((c) => {
     c.addEventListener("mouseenter", () => $(`.petal[data-cat="${c.dataset.cat}"]`)?.classList.add("hl"));
     c.addEventListener("mouseleave", () => $$(".petal.hl").forEach((p) => p.classList.remove("hl")));
   });
 }
+
+/* ---------- checklist + simulador de nota ---------- */
+function saveDone() { if (REPORT && !REPORT.demo) store.set("done:" + REPORT.url, [...DONE]); }
+let _simPrev = null;
+function renderSim() {
+  const box = $("#sim"); if (!box) return;
+  const items = REPORT.checks.filter((c) => c.pri), n = items.filter((c) => DONE.has(c.id)).length;
+  const S = computeScores(REPORT.checks, DONE), st = stageOf(S.overall), st0 = stageOf(REPORT.overall);
+  const pct = items.length ? Math.round((n / items.length) * 100) : 0;
+  const chip = (lbl, a, b, id) => `<div class="sim-chip"><span>${lbl}</span><b class="num"><em>${a ?? "–"}</em><svg viewBox="0 0 16 8" aria-hidden="true"><path d="M1 4h13M10 1l4 3-4 3"/></svg><strong id="${id}">${b ?? "–"}</strong></b>${b != null && a != null && b - a > 0 ? `<i class="num">+${b - a}</i>` : ""}</div>`;
+  box.innerHTML = `<div class="sim-l"><span class="k">simulador</span><h3>${n ? `${n} de ${items.length} ${n === 1 ? "item feito" : "itens feitos"}` : "Marque o que você já corrigiu"}</h3>
+      <div class="sim-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${pct}" aria-label="Progresso do plano"><em style="width:${pct}%"></em><span style="left:${pct}%">${stageIcon(st.i)}</span></div>
+      <p class="hint">${n ? `Estágio projetado: <b>${st.name}</b>${st.i > st0.i ? " (subiu!)" : ""}. A simulação considera os itens marcados como aprovados.` : "Cada item do plano tem um círculo à esquerda. Marque e veja as notas projetadas subirem."}</p></div>
+    <div class="sim-r">${chip("Saúde geral", REPORT.overall, S.overall, "simO")}${chip("Alcance", REPORT.reach, S.reach, "simR")}${chip("Conversão", REPORT.conversion, S.conversion, "simC")}
+      ${n ? `<button type="button" class="linkish" id="simReset">zerar simulação</button>` : ""}</div>`;
+  if (_simPrev) { tweenText($("#simO"), _simPrev.overall, S.overall); tweenText($("#simR"), _simPrev.reach, S.reach); tweenText($("#simC"), _simPrev.conversion, S.conversion); }
+  _simPrev = S;
+  const left = $("#navLeft"); if (left) left.textContent = items.length - n;
+}
+function toggleDone(id, e) {
+  const before = computeScores(REPORT.checks, DONE).overall;
+  const on = !DONE.has(id); on ? DONE.add(id) : DONE.delete(id); saveDone();
+  const art = $(`.item[data-item="${CSS.escape(id)}"]`);
+  if (art) {
+    art.classList.toggle("done", on);
+    const b = art.querySelector(".tick"); b.setAttribute("aria-pressed", String(on)); b.title = on ? "Desmarcar" : "Marcar como feito";
+    b.setAttribute("aria-label", (on ? "Desmarcar" : "Marcar como feito") + ": " + art.querySelector("h3").textContent);
+  }
+  renderSim(); if (flowerMode === "sim") renderFlower();
+  if (on) {
+    const after = computeScores(REPORT.checks, DONE).overall, d = (after ?? 0) - (before ?? 0);
+    const r = (e?.target.closest(".tick") || art)?.getBoundingClientRect();
+    if (r) { garden.burst(r.left + r.width / 2, r.top + r.height / 2); floaty(r.left + r.width / 2, r.top, d > 0 ? `+${d} saúde` : "feito!"); }
+    const pend = REPORT.checks.filter((c) => (c.pri === "crit" || c.pri === "high") && !DONE.has(c.id));
+    if (!pend.length && REPORT.checks.some((c) => c.pri === "crit" || c.pri === "high") && ["crit", "high"].includes(REPORT.checks.find((c) => c.id === id)?.pri)) {
+      toast("Todas as prioridades críticas e altas resolvidas!");
+      if (r && !reduceMotion) [0, 180, 360].forEach((ms, i) => setTimeout(() => garden.burst(r.left + (i - 1) * 90, r.top - 40 * i), ms));
+    }
+  }
+}
+function floaty(x, y, text) {
+  if (reduceMotion) return;
+  const el = document.createElement("div"); el.className = "floaty"; el.textContent = text;
+  el.style.left = x + "px"; el.style.top = y + "px"; document.body.appendChild(el);
+  setTimeout(() => el.remove(), 1100);
+}
+
+/* ---------- palavras-chave: detalhe da bolha ---------- */
+function kwDetailHTML(k) {
+  if (!k) return "";
+  const Z = [["title", "título"], ["desc", "descrição"], ["h1", "H1"], ["h2", "H2/H3"], ["url", "URL"], ["alt", "alt de imagem"], ["first", "início do texto"]];
+  const has = Z.filter(([z]) => k.z[z]).map(([, l]) => l), miss = Z.filter(([z]) => !k.z[z]).map(([, l]) => l);
+  return `<div class="kd-h"><b>${esc(k.term)}</b><button type="button" class="btn" data-copy="${esc(k.term)}">Copiar</button></div>
+    <div class="kd-n"><span><b class="num">${k.count}×</b> no texto</span><span><b class="num">${k.density.toFixed(1).replace(".", ",")}%</b> densidade</span></div>
+    <p>${has.length ? `Aparece em: ${has.map((x) => `<span class="tagok">${x}</span>`).join(" ")}` : "Não aparece em nenhuma posição de destaque."}</p>
+    ${miss.length ? `<p>Pode entrar em: ${miss.map((x) => `<span class="tagno">${x}</span>`).join(" ")}</p>` : ""}
+    <p class="hint">Toque em outra bolha para comparar.</p>`;
+}
+
+/* ---------- laboratório de título ---------- */
+function updateSerp() {
+  const T = $("#serpT"), D = $("#serpD"); if (!T || !REPORT?.f) return;
+  $("#serpBox").innerHTML = serpHTML(REPORT, T.value.trim(), D.value.trim());
+  const tl = T.value.trim().length, dl = D.value.trim().length;
+  $("#serpTc").textContent = `${tl} caracteres${tl > 60 ? " · longo" : tl && tl < 30 ? " · curto" : ""}`;
+  $("#serpDc").textContent = `${dl} caracteres${dl > 160 ? " · longa" : dl && dl < 70 ? " · curta" : ""}`;
+}
+
+function planMarkdown(R) {
+  const items = R.checks.filter((c) => c.pri).sort((a, b) => PRI[a.pri].o - PRI[b.pri].o || b.w - a.w);
+  const strip = (s) => String(s).replace(/<[^>]+>/g, "").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"').replace(/&amp;/g, "&");
+  return `# Plano de ação · ${R.host}\n${R.url}\nSaúde ${R.overall} · Alcance ${R.reach} · Conversão ${R.conversion}\n\n` +
+    items.map((c, i) => `${i + 1}. ${DONE.has(c.id) ? "[x]" : "[ ]"} [${PRI[c.pri].name}] ${c.title} (${CATS[c.cat].name}, esforço ${c.effort})\n   Situação: ${c.value}\n   Como corrigir: ${strip(c.fix)}`).join("\n\n");
+}
+
+function wireReport() {
+  // hover entre pétalas e lista é ligado em renderFlower(); cliques são delegados uma única vez (seção 12)
+}
 function onReportClick(e) {
-  const t = e.target.closest("button, .petal"); if (!t) return;
+  const t = e.target.closest("button, .petal, [data-kw]"); if (!t) return;
+  if (t.dataset.done) return toggleDone(t.dataset.done, e);
+  if (t.dataset.nav) { $("#" + t.dataset.nav)?.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth" }); return; }
+  if (t.dataset.fmode) { flowerMode = t.dataset.fmode; renderFlower(); return; }
+  if (t.dataset.kw) { const k = REPORT.kw.list.find((x) => x.key === t.dataset.kw); $$(".bub.on").forEach((b) => b.classList.remove("on")); t.classList.add("on"); $("#kwDetail").innerHTML = kwDetailHTML(k); return; }
+  if (t.id === "simReset") { DONE.clear(); saveDone(); renderPlan(); renderSim(); if (flowerMode === "sim") renderFlower(); toast("Simulação zerada"); return; }
+  if (t.id === "serpCopy") { copy(`<title>${$("#serpT").value.trim()}</title>\n<meta name="description" content="${$("#serpD").value.trim().replace(/"/g, "&quot;")}">`, "Tags copiadas"); return; }
+  if (t.id === "serpReset") { $("#serpT").value = REPORT.f.title || ""; $("#serpD").value = REPORT.f.desc || ""; updateSerp(); return; }
   if (t.dataset.pri) { planAll = false; filterPri = t.dataset.pri; renderFilters(); renderPlan(); }
   else if (t.dataset.fcat) { planAll = false; filterCat = t.dataset.fcat; renderFilters(); renderPlan(); }
   else if (t.dataset.cat) { filterCat = REPORT.checks.some((c) => c.pri && c.cat === t.dataset.cat) ? t.dataset.cat : "all"; filterPri = "all"; renderFilters(); renderPlan(); $("#plano").scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth" }); if (filterCat === "all") toast("Nenhuma pendência em " + CATS[t.dataset.cat].name + " 🌱"); }
-  else if (t.dataset.lh) { lhView = t.dataset.lh; $$("[data-lh]").forEach((b) => b.classList.toggle("on", b === t)); renderVitals(); }
+  else if (t.dataset.lh) { lhView = t.dataset.lh; $$("[data-lh]").forEach((b) => { b.classList.toggle("on", b === t); b.setAttribute("aria-selected", String(b === t)); }); renderVitals(); }
   else if (t.dataset.copy != null) copy(t.dataset.copy, "Copiado: " + t.dataset.copy);
   else if (t.id === "planMore") { planAll = true; renderPlan(); }
   else if (t.id === "goodMore") { goodAll = true; t.remove(); renderGood(); }
@@ -1494,6 +1769,23 @@ const STEPS = [
   ["sug", "Consultando buscas reais do Google"],
   ["score", "Calculando prioridades"],
 ];
+const TIPS = [
+  "O Google indexa primeiro a versão para celular das páginas (mobile-first).",
+  "Títulos acima de uns 600 px de largura aparecem cortados com “…” no Google.",
+  "LCP bom é até 2,5 s. Acima de 4 s, o Google considera ruim.",
+  "Desde março de 2024, o INP substituiu o FID como Core Web Vital de interatividade.",
+  "Links sem og:image aparecem sem foto quando alguém compartilha no WhatsApp.",
+  "Dados estruturados (Schema.org) podem render estrelas, preços e perguntas direto no resultado do Google.",
+  "Texto alternativo nas imagens ajuda o Google Imagens e pessoas com leitores de tela.",
+];
+let _tipTimer = null;
+function tips(on) {
+  clearInterval(_tipTimer); const el = $("#tip"); if (!el) return;
+  if (!on) return;
+  let i = Math.floor(Math.random() * TIPS.length);
+  const show = () => { el.classList.remove("in"); void el.offsetWidth; el.innerHTML = "<b>Você sabia?</b> " + esc(TIPS[i++ % TIPS.length]); el.classList.add("in"); };
+  show(); _tipTimer = setInterval(show, 5000);
+}
 function setStep(id, state, note = "") {
   const li = $(`#steps li[data-s="${id}"]`); if (!li) return;
   li.className = state; li.querySelector("small").textContent = note;
@@ -1511,7 +1803,7 @@ async function run(url) {
   const wantPsi = $("#optPsi").checked, wantDesk = wantPsi && $("#optDesk").checked, wantSug = $("#optSug").checked;
   $("#steps").innerHTML = STEPS.map(([id, t]) => `<li data-s="${id}"><span class="dot"></span><span>${t}</span><small></small></li>`).join("");
   $("#loadTitle").textContent = "Plantando a análise de " + hostOf(url) + "…";
-  $("#loading").hidden = false; $("#report").innerHTML = ""; grow.start();
+  $("#loading").hidden = false; $("#report").innerHTML = ""; grow.start(); tips(true);
   $("#loading").scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "center" });
   const notes = [];
   try {
@@ -1550,12 +1842,12 @@ async function run(url) {
     const R = analyze(page || { requestedUrl: url, finalUrl: url }, psiM, psiD, { suggest, notes });
     setStep("score", "ok");
     await sleep(reduceMotion ? 0 : 500);
-    $("#loading").hidden = true; grow.stop();
+    $("#loading").hidden = true; grow.stop(); tips(false);
     render(R);
     saveHistory(R);
     $("#resumo").scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth" });
   } catch (e) {
-    $("#loading").hidden = true; grow.stop();
+    $("#loading").hidden = true; grow.stop(); tips(false);
     err.innerHTML = `<b>${esc(e.message)}</b>${e.details?.length ? `<ul style="margin:8px 0 0;padding-left:18px">${e.details.map((d) => `<li>${esc(d)}</li>`).join("")}</ul>` : ""}${edgeOn() ? "" : `<p style="margin:8px 0 0">Para funcionar com qualquer site, conecte o Supabase e uma chave PageSpeed. <button type="button" class="linkish" data-open-settings>Abrir conexões</button></p>`}`;
     err.hidden = false;
   } finally { btn.disabled = false; }
@@ -1598,11 +1890,7 @@ function settingsHTML() {
 async function historyHTML() {
   const { src, rows } = await loadHistory();
   if (!rows?.length) return `<p>Nenhuma análise salva ainda (${esc(src)}).</p>`;
-  const prevByHost = {};
-  const list = rows.map((r) => {
-    const later = prevByHost[r.host]; prevByHost[r.host] = r;
-    return r;
-  });
+  const list = rows.map((r) => ({ ...r }));
   const older = {}; // delta em relação à análise anterior do mesmo host
   for (let i = list.length - 1; i >= 0; i--) { const r = list[i]; r._delta = older[r.host] != null ? r.overall - older[r.host] : null; older[r.host] = r.overall; }
   return `<p>Fonte: ${esc(src)}</p><div class="hist">${list.map((r) => `<button type="button" data-hurl="${esc(r.url)}"><b style="color:${scoreColor(r.overall)}">${r.overall ?? "–"}</b><span>${esc(r.host)}<br><small>${new Date(r.created_at).toLocaleString("pt-BR", { dateStyle: "short", timeStyle: "short" })} · alcance ${r.reach ?? "–"}${r._delta ? ` · ${r._delta > 0 ? "+" : ""}${r._delta} desde a anterior` : ""}</small></span><small>refazer ↻</small></button>`).join("")}</div>`;
@@ -1700,7 +1988,7 @@ const grow = (() => {
     cur += (api.target - cur) * 0.06 + 0.0008; cur = Math.min(cur, Math.max(api.target, cur));
     const C = [cssVar("--coral"), cssVar("--marigold"), cssVar("--teal"), cssVar("--lilac")];
     ctx.clearRect(0, 0, 600, 600);
-    const n = Math.floor(30 + cur * 520), rot = performance.now() / 6000;
+    const n = Math.floor(140 + cur * 420), rot = performance.now() / 6000;
     for (let i = 1; i < n; i++) {
       const a = i * GOLD + rot, r = 11.5 * Math.sqrt(i); if (r > 280) break;
       ctx.fillStyle = C[i % 4]; ctx.globalAlpha = 0.35 + 0.65 * (1 - i / n);
@@ -1755,6 +2043,20 @@ function runDemo(scroll = true) {
    12. início
    ========================================================================== */
 drawLogo(); drawSeal(); fillMarquee(); updateChip();
+$("#report").addEventListener("click", onReportClick);
+$("#report").addEventListener("input", (e) => { if (e.target.id === "serpT" || e.target.id === "serpD") updateSerp(); });
+$("#report").addEventListener("keydown", (e) => { const k = e.target.closest?.("[data-kw]"); if (k && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); k.dispatchEvent(new MouseEvent("click", { bubbles: true })); } });
+// cartões com leve inclinação 3D seguindo o mouse
+let _tiltEl = null;
+document.addEventListener("pointermove", (e) => {
+  const el = reduceMotion || e.pointerType !== "mouse" ? null : e.target.closest?.("[data-tilt], [data-tilt-children] > .panel");
+  if (_tiltEl && _tiltEl !== el) _tiltEl.style.transform = "";
+  _tiltEl = el; if (!el) return;
+  const r = el.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;
+  el.style.transform = `perspective(800px) rotateX(${(-y * 5).toFixed(2)}deg) rotateY(${(x * 6).toFixed(2)}deg) translateY(-3px)`;
+});
+// sites de exemplo no formulário
+$("#tryRow").addEventListener("click", (e) => { const b = e.target.closest("[data-try]"); if (!b) return; $("#urlInput").value = b.dataset.try; $("#probe").requestSubmit(); });
 
 $("#probe").addEventListener("submit", (e) => {
   e.preventDefault();
@@ -1797,6 +2099,25 @@ $("#drawer").addEventListener("click", async (e) => {
     try { const r = await edge("ping", {}, 10000); msg.textContent = "✓ Conectado. Chave PageSpeed no servidor: " + (r.psiKey ? "sim" : "não (funciona, mas com limite menor)"); }
     catch (er) { msg.textContent = "✕ " + er.message; }
   }
+});
+let _compact = innerWidth < 600;
+addEventListener("resize", () => {
+  const c = innerWidth < 600;
+  if (c !== _compact && REPORT) { _compact = c; renderFlower(); }
+});
+let _themeBeforePrint = null;
+addEventListener("beforeprint", () => {
+  if (!REPORT) return;
+  _themeBeforePrint = document.documentElement.dataset.theme ?? "";
+  document.documentElement.dataset.theme = "light"; // papel é claro: imprime sempre com a paleta clara
+  filterPri = "all"; filterCat = "all"; planAll = true; goodAll = true;
+  renderFilters(); renderPlan(); renderGood(); $("#goodMore")?.remove();
+  $$("#report details").forEach((d) => (d.open = true));
+});
+addEventListener("afterprint", () => {
+  if (_themeBeforePrint === null) return;
+  if (_themeBeforePrint) document.documentElement.dataset.theme = _themeBeforePrint; else delete document.documentElement.dataset.theme;
+  _themeBeforePrint = null;
 });
 addEventListener("keydown", (e) => { if (e.key === "Escape" && !$("#drawer").hidden) closeDrawer(); });
 
