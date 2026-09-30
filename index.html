@@ -177,7 +177,7 @@ h1,h2,h3{text-wrap:balance;margin:0}
 /* ---------- relatório ---------- */
 .report{position:relative;z-index:2;padding-bottom:80px}
 .demo-flag{display:flex;gap:12px;align-items:center;flex-wrap:wrap;border:1px dashed var(--marigold);background:linear-gradient(var(--warn-bg),var(--warn-bg)),var(--panel);border-radius:16px;padding:12px 16px;font-size:14px;margin-block:10px 24px}
-.demo-flag b{font-family:var(--f-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--marigold)}
+.demo-flag > b{font-family:var(--f-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--marigold)}
 .section{margin-top:clamp(50px,7vw,90px)}
 .sec-head{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin-bottom:22px}
 .sec-head .k{font-family:var(--f-mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--coral);display:block;margin-bottom:8px}
@@ -1198,6 +1198,7 @@ function render(R) {
 
   const html = `
   ${R.demo ? `<div class="demo-flag"><b>exemplo</b><span>Relatório de demonstração de um site fictício (Ateliê Lume). Cole a URL do seu site acima para analisar de verdade.</span></div>` : ""}
+  ${!f ? `<div class="demo-flag" style="border-color:var(--bad)"><b style="color:var(--bad)">relatório parcial</b><span>A página não pôde ser lida, então só entraram os dados de performance do Google. <b>SEO on-page, palavras-chave, redes sociais, dados estruturados e conversão não foram avaliados</b>, e as notas abaixo tendem a sair mais altas do que a realidade. Conecte a Edge Function do Supabase (engrenagem ⚙) para o relatório completo.</span></div>` : ""}
   ${R.notes.length ? `<div class="demo-flag"><b>aviso</b><span>${R.notes.map(esc).join(" · ")}</span></div>` : ""}
 
   <section class="section" style="margin-top:10px" id="resumo">
@@ -1213,9 +1214,9 @@ function render(R) {
         </div>
         <p class="verdict">${verdictText(R)}</p>
         <div class="gauges">
-          <div class="gauge">${ring(R.overall, 150, 12, "Saúde geral")}<span class="lbl">saúde geral</span><span class="sub">média ponderada das 10 áreas</span></div>
-          <div class="gauge">${ring(R.reach, 150, 12, "Potencial de alcance")}<span class="lbl">potencial de alcance</span><span class="sub">chance de ser achado e clicado</span></div>
-          <div class="gauge">${ring(R.conversion, 150, 12, "Poder de conversão")}<span class="lbl">poder de conversão</span><span class="sub">chance de a visita virar lead</span></div>
+          <div class="gauge">${ring(R.overall, 150, 12, "Saúde geral")}<span class="lbl">saúde geral${f ? "" : " · parcial"}</span><span class="sub">${f ? "média ponderada das 10 áreas" : "só áreas medidas pelo PageSpeed"}</span></div>
+          <div class="gauge">${ring(R.reach, 150, 12, "Potencial de alcance")}<span class="lbl">potencial de alcance${f ? "" : " · parcial"}</span><span class="sub">chance de ser achado e clicado</span></div>
+          <div class="gauge">${ring(R.conversion, 150, 12, "Poder de conversão")}<span class="lbl">poder de conversão${f ? "" : " · parcial"}</span><span class="sub">chance de a visita virar lead</span></div>
         </div>
         <div class="tally">
           <div class="p-crit"><b class="num">${count("crit")}</b><span>crítico</span></div>
